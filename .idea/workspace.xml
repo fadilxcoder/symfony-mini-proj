@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1710f0cf-cf94-442d-8630-7f9e74a68e79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpcs.xml.dist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/facr-symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/facr-symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
@@ -139,6 +135,7 @@
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
       <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
       <path value="$PROJECT_DIR$/vendor/pdepend/pdepend" />
+      <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YCOMrKC1C9x3cLCUjO652KPTor" />
@@ -167,7 +164,7 @@
       <updated>1582443068113</updated>
       <workItem from="1582443076125" duration="797000" />
       <workItem from="1582561742218" duration="1189000" />
-      <workItem from="1582563044865" duration="1395000" />
+      <workItem from="1582563044865" duration="2542000" />
     </task>
     <servers />
   </component>
