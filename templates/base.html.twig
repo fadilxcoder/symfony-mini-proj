@@ -2,11 +2,55 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <!--=== Slicknav CSS ===-->
+        <link href="{{ asset('css/plugins/slicknav.min.css') }}" rel="stylesheet">
+        <!--=== Magnific Popup CSS ===-->
+        <link href="{{ asset('css/plugins/magnific-popup.css') }}" rel="stylesheet">
+        <!--=== Owl Carousel CSS ===-->
+        <link href="{{ asset('css/plugins/owl.carousel.min.css') }}" rel="stylesheet">
+        <!--=== Gijgo CSS ===-->
+        <link href="{{ asset('css/plugins/gijgo.css') }}" rel="stylesheet">
+        <!--=== FontAwesome CSS ===-->
+        <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
+        <!--=== Theme Reset CSS ===-->
+        <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+        <!--=== Main Style CSS ===-->
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <!--=== Responsive CSS ===-->
+        <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
+    <body class="loader-active">
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <!--=== Jquery Min Js ===-->
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+        <!--=== Jquery Migrate Min Js ===-->
+        <script src="{{ asset('js/jquery-migrate.min.js') }}"></script>
+        <!--=== Popper Min Js ===-->
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <!--=== Bootstrap Min Js ===-->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <!--=== Gijgo Min Js ===-->
+        <script src="{{ asset('js/plugins/gijgo.js') }}"></script>
+        <!--=== Vegas Min Js ===-->
+        <script src="{{ asset('js/plugins/vegas.min.js') }}"></script>
+        <!--=== Isotope Min Js ===-->
+        <script src="{{ asset('js/plugins/isotope.min.js') }}"></script>
+        <!--=== Owl Caousel Min Js ===-->
+        <script src="{{ asset('js/plugins/owl.carousel.min.js') }}"></script>
+        <!--=== Waypoint Min Js ===-->
+        <script src="{{ asset('js/plugins/waypoints.min.js') }}"></script>
+        <!--=== CounTotop Min Js ===-->
+        <script src="{{ asset('js/plugins/counterup.min.js') }}"></script>
+        <!--=== Magnific Popup Min Js ===-->
+        <script src="{{ asset('js/plugins/magnific-popup.min.js') }}"></script>
+        <!--=== Slicknav Min Js ===-->
+        <script src="{{ asset('js/plugins/slicknav.min.js') }}"></script>
+
+        <!--=== Mian Js ===-->
+        <script src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

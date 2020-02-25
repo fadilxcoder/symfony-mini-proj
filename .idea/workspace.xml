@@ -2,13 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1710f0cf-cf94-442d-8630-7f9e74a68e79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/facr-symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/facr-symfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/article-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/article.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/gijgo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/magnific-popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/slicknav.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/plugins/vegas.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/article/arti-thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/article/arti-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/article/arti-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/article/arti-thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/car/car-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/caret-cion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/client/client-pic-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/client/client-pic-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/client/client-pic-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/driver/driver-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/funfact-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/home-2-about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/mobile-app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/page-title.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/partner/partner-logo-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/partner/partner-logo-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/partner/partner-logo-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/partner/partner-logo-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/partner/partner-logo-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/preloader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/pricing-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/scroll-top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/services/service-icon-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/slider-img/slider-img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/slider-img/slider-img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/slider-img/slider-img-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/slider-img/slider-img-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-thumb-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-thumb-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-thumb-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/team/team-mem-thumb-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/we-do/service1-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/we-do/service2-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/img/we-do/service3-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/jquery-migrate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/counterup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/gijgo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/isotope.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/magnific-popup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/mb.YTPlayer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/slicknav.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/vegas.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/plugins/waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/car-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/car-left-sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/car-right-sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/car-without-sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/driver.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/gallery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/help-desk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/index3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/services.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cardoor/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +268,8 @@
       <updated>1582443068113</updated>
       <workItem from="1582443076125" duration="797000" />
       <workItem from="1582561742218" duration="1189000" />
-      <workItem from="1582563044865" duration="2542000" />
+      <workItem from="1582563044865" duration="3141000" />
+      <workItem from="1582646765118" duration="5008000" />
     </task>
     <servers />
   </component>
@@ -172,6 +277,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="291" y="-898" key="#CSS" timestamp="1582650087803">
+      <screen x="-261" y="-1080" width="1920" height="1050" />
+    </state>
+    <state x="291" y="-898" key="#CSS/0.0.1366.738/-261.-1080.1920.1050@-261.-1080.1920.1050" timestamp="1582650087803" />
     <state x="279" y="-902" key="#Mess_Detector" timestamp="1582562797310">
       <screen x="-261" y="-1080" width="1920" height="1050" />
     </state>
@@ -200,6 +309,10 @@
       <screen x="-261" y="-1080" width="1920" height="1050" />
     </state>
     <state x="458" y="-670" key="com.intellij.ide.util.TipDialog/0.0.1366.738/-261.-1080.1920.1050@-261.-1080.1920.1050" timestamp="1582443083237" />
+    <state x="396" y="-957" width="606" height="804" key="find.popup" timestamp="1582650025089">
+      <screen x="-261" y="-1080" width="1920" height="1050" />
+    </state>
+    <state x="396" y="-957" width="606" height="804" key="find.popup/0.0.1366.738/-261.-1080.1920.1050@-261.-1080.1920.1050" timestamp="1582650025089" />
     <state x="355" y="-302" key="run.anything.popup" timestamp="1582443286643">
       <screen x="-261" y="-1080" width="1920" height="1050" />
     </state>
