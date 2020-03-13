@@ -1,0 +1,1 @@
+console.log(jQuery('#mobile-app-area h2').text());
