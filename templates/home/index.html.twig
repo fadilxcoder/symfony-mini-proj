@@ -9,48 +9,28 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="book-a-car">
-                            <form action="index.html">
-                                <!--== Pick Up Location ==-->
+                            {{ form_start(HomePageForm) }}
                                 <div class="pickup-location book-item">
-                                    <h4>PICK-UP LOCATION:</h4>
-                                    <select class="custom-select">
-                                        <option selected>Select</option>
-                                        <option value="1">Dhaka</option>
-                                        <option value="2">Comilla</option>
-                                        <option value="3">Barishal</option>
-                                        <option value="3">Rangpur</option>
-                                    </select>
+                                    <h4>{{ form_label(HomePageForm.pick_up_location) }}</h4>
+                                    {{ form_widget(HomePageForm.pick_up_location) }}
                                 </div>
-                                <!--== Pick Up Location ==-->
-
-                                <!--== Pick Up Date ==-->
                                 <div class="pick-up-date book-item">
-                                    <h4>PICK-UP DATE:</h4>
-                                    <input id="startDate" placeholder="Pick Up Date" />
-
+                                    <h4>{{ form_label(HomePageForm.pick_up_date) }}</h4>
+                                    {{ form_widget(HomePageForm.pick_up_date, { 'id':'startDate' }) }}
                                     <div class="return-car">
-                                        <h4>Return DATE:</h4>
-                                        <input id="endDate" placeholder="Return Date" />
+                                        <h4>{{ form_label(HomePageForm.return_date) }}</h4>
+                                        {{ form_widget(HomePageForm.return_date, { 'id':'endDate' }) }}
                                     </div>
                                 </div>
-                                <!--== Pick Up Location ==-->
-
-                                <!--== Car Choose ==-->
                                 <div class="choose-car-type book-item">
-                                    <h4>CHOOSE CAR TYPE:</h4>
-                                    <select class="custom-select">
-                                        <option selected>Select</option>
-                                        <option value="1">BMW</option>
-                                        <option value="2">Audi</option>
-                                        <option value="3">Lexus</option>
-                                    </select>
+                                    <h4>{{ form_label(HomePageForm.car_type) }}</h4>
+                                    {{ form_widget(HomePageForm.car_type) }}
                                 </div>
-                                <!--== Car Choose ==-->
-
                                 <div class="book-button text-center">
-                                    <button class="book-now-btn">Book Now</button>
+                                    {{ form_widget(HomePageForm.book_now) }}
                                 </div>
-                            </form>
+                                {{ form_widget(HomePageForm._token) }}
+                            {{ form_end(HomePageForm, {'render_rest': false}) }}
                         </div>
                     </div>
 
