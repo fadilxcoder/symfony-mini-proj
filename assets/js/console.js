@@ -1,3 +1,3 @@
 export default function (name) {
-    return 'logger (' + name + ')  : ' + $('#mobile-app-area h2').text();
+    return 'logger (' + name + ')  : ' + $('#footer-area .get-touch li').first().text();
 }

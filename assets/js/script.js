@@ -1,1 +1,2 @@
-console.log(jQuery('#mobile-app-area h2').text());
+// Checking JQuery
+console.log(jQuery('#footer-area .widget-body a').text());
