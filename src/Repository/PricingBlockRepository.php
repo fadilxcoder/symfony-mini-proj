@@ -47,4 +47,19 @@ class PricingBlockRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getBlockPricingDetails($status)
+    {
+        $connection = $this->_em->getConnection();
+        $sql = 'SELECT p.*
+                FROM pricing_block AS p 
+                WHERE p.status = :status
+                ORDER BY p.position ASC';
+
+        $statment = $connection->prepare($sql);
+        $statment->bindParam(':status', $status, \PDO::PARAM_BOOL);
+        $statment->execute();
+
+        return $statment->fetchAll();
+    }
 }
