@@ -3,6 +3,7 @@
 namespace App\Twig;
 
 use App\Entity\PricingBlock;
+use App\Entity\Testimonials;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -28,6 +29,7 @@ class AppExtension extends AbstractExtension
     {
         return [
             new TwigFunction('pricingBlock', [$this, 'getPricingBlock']),
+            new TwigFunction('testimonialsBlock', [$this, 'getTestimonials']),
         ];
     }
 
@@ -44,7 +46,7 @@ class AppExtension extends AbstractExtension
             return 'FREE';
         }
 
-        return '$ '. number_format($price, 2);
+        return '$ '.number_format($price, 2);
     }
 
     // Functions
@@ -58,4 +60,13 @@ class AppExtension extends AbstractExtension
     {
         return $this->em->getRepository(PricingBlock::class)->getBlockPricingDetails($status);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTestimonials()
+    {
+        return $this->em->getRepository(Testimonials::class)->getTestimonials();
+    }
+
 }

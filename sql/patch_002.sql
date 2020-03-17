@@ -1,0 +1,4 @@
+INSERT INTO `testimonials` (`id`, `name`, `description`, `image`, `status`) VALUES (NULL, 'Vongchong Smith', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis totam obcaecati impedit, at autem repellat vel magni architecto veritatis sed.', 'client-pic-1.jpg', '1');
+INSERT INTO `testimonials` (`id`, `name`, `description`, `image`, `status`) VALUES (NULL, 'Amader Tuni', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis totam obcaecati impedit, at autem repellat vel magni architecto veritatis sed.', 'client-pic-3.jpg', '1');
+INSERT INTO `testimonials` (`id`, `name`, `description`, `image`, `status`) VALUES (NULL, 'Atex Tuntuni Smith', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis totam obcaecati impedit, at autem repellat vel magni architecto veritatis sed.', 'client-pic-2.jpg', '1');
+INSERT INTO `testimonials` (`id`, `name`, `description`, `image`, `status`) VALUES (NULL, 'John Doe', '', '', '0');
