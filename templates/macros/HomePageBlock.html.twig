@@ -63,3 +63,27 @@
     </section>
 
 {% endmacro %}
+
+{% macro renderPartners() %}
+
+    <div id="partner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="partner-content-wrap">
+                        {% for _partners in getPartnersDetails() %}
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="{{ asset('images/partner/'~_partners.image) }}" alt="{{ _partners.name }}" title="{{ _partners.name }}">
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endmacro %}

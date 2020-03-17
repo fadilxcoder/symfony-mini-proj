@@ -2,6 +2,7 @@
 
 namespace App\Twig;
 
+use App\Entity\Partners;
 use App\Entity\PricingBlock;
 use App\Entity\Testimonials;
 use Doctrine\ORM\EntityManagerInterface;
@@ -30,6 +31,7 @@ class AppExtension extends AbstractExtension
         return [
             new TwigFunction('pricingBlock', [$this, 'getPricingBlock']),
             new TwigFunction('testimonialsBlock', [$this, 'getTestimonials']),
+            new TwigFunction('getPartnersDetails', [$this, 'getPartners']),
         ];
     }
 
@@ -67,6 +69,14 @@ class AppExtension extends AbstractExtension
     public function getTestimonials()
     {
         return $this->em->getRepository(Testimonials::class)->getTestimonials();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPartners()
+    {
+        return $this->em->getRepository(Partners::class)->getPartners();
     }
 
 }
