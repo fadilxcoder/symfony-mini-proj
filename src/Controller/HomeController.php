@@ -26,4 +26,12 @@ class HomeController extends AbstractController
             'HomePageForm' => $form->createView(),
         ]);
     }
+
+    public function _newsletterForm($yr)
+    {
+        return $this->render('sub-request/_newsletter.html.twig', [
+            'headerText' => 'Newsletter '.$yr,
+            'phraseText' => 'Lorem ipsum dolored is a sit ameted consectetur adipisicing elit',
+        ]);
+    }
 }

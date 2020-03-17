@@ -1,31 +1,11 @@
-<!--== Footer Area Start ==-->
 <section id="footer-area">
-    <!-- Footer Widget Start -->
     <div class="footer-widget-area">
         <div class="container">
             <div class="row">
-                <!-- Single Footer Widget Start -->
                 <div class="col-lg-7 col-md-6">
-                    <div class="single-footer-widget">
-                        <h2>About Us</h2>
-                        <div class="widget-body">
-                            <img src="{{ asset('images/logo.png') }}" alt="JSOFT">
-                            <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit</p>
-
-                            <div class="newsletter-area">
-                                <form action="">
-                                    <input type="email" placeholder="Subscribe Our Newsletter">
-                                    <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
+                    {# Sub Request#}
+                    {{ render(controller('App\\Controller\\HomeController::_newsletterForm', { yr: "now"|date("Y")  })) }}
                 </div>
-                <!-- Single Footer Widget End -->
-
-
-                <!-- Single Footer Widget Start -->
                 <div class="col-lg-5 col-md-6">
                     <div class="single-footer-widget">
                         <h2>Get In Touch</h2>
@@ -39,12 +19,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Single Footer Widget End -->
             </div>
         </div>
     </div>
-    <!-- Footer Widget End -->
-
     {% include 'includes/copyright.html.twig' %}
 </section>
-<!--== Footer Area End ==-->
