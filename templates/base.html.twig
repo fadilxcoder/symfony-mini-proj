@@ -51,6 +51,8 @@
 {#        <script src="{{ asset('js/script.js') }}"></script>#}
         {{ encore_entry_script_tags('script') }}
 
+        {% include 'includes/javascript-block.html.twig' %}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
