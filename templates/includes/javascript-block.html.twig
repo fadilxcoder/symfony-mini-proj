@@ -1,5 +1,9 @@
 {% block javascripts %}
     <script type="text/javascript">
-        console.log('dev');
+        // Newsletter
+        $('#footer-newsletter button').on('click', function(e) {
+            callFooterAjax(e, '{{ path("newsletterSubscribe") }}', $(this));
+        });
+
     </script>
 {% endblock %}

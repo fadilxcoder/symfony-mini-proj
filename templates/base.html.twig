@@ -30,6 +30,9 @@
         {% include 'includes/footer.html.twig' %}
         {% include 'includes/scroller.html.twig' %}
 
+        <!-- Below goes Modals -->
+        {%  include 'modals/modal_newsletter.html.twig' %}
+
         <!-- Below goes JS -->
 
 {#        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>#}
@@ -48,8 +51,8 @@
         <script src="{{ asset('js/plugins/slicknav.min.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
 
-{#        <script src="{{ asset('js/script.js') }}"></script>#}
-        {{ encore_entry_script_tags('script') }}
+        <script src="{{ asset('js/script.js') }}"></script>
+{#        {{ encore_entry_script_tags('script') }}#}
 
         {% include 'includes/javascript-block.html.twig' %}
 
