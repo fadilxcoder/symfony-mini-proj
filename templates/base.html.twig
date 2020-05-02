@@ -51,11 +51,14 @@
         <script src="{{ asset('js/plugins/slicknav.min.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
 
-        <script src="{{ asset('js/script.js') }}"></script>
-{#        {{ encore_entry_script_tags('script') }}#}
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
-        {% include 'includes/javascript-block.html.twig' %}
+{#        <script src="{{ asset('js/script.js') }}"></script>#}
+        {{ encore_entry_script_tags('script') }}
 
-        {% block javascripts %}{% endblock %}
+{#        {% include 'includes/javascript-block.html.twig' %}#}
+
+{#        {% block javascripts %}{% endblock %}#}
     </body>
 </html>

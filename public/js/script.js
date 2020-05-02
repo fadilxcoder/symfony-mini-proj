@@ -1,4 +1,6 @@
 // Newsletter
+/*
+
 function callFooterAjax(event, path, $this)
 {
     $this.attr('disabled', true);
@@ -34,3 +36,5 @@ function successHandler(data, $this)
     $this.attr('disabled', false);
     $('#modal-newsletter .modal-body').html(data.response.msg)
 }
+
+*/

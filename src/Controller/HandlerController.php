@@ -19,7 +19,7 @@ class HandlerController extends AbstractController
     }
 
     /**
-     * @Route("/newsletter-subscription", name="newsletterSubscribe")
+     * @Route("/newsletter-subscription", name="newsletterSubscribe", options={"expose"=true})
      */
     public function subscribeToNewsletter(Request $request, ValidatorInterface $validator)
     {
