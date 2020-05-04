@@ -1,6 +1,6 @@
 
 // Checking JQuery
-console.log(jQuery('#footer-area .widget-body a').text());
+// console.log(jQuery('#footer-area .widget-body a').text()); // Show Location
 
 $('#footer-newsletter button').on('click', function (e) {
     callFooterAjax(e, Routing.generate('newsletterSubscribe'), $(this));

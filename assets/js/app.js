@@ -21,7 +21,7 @@ import '../js/plugins/slicknav.min';
 import '../js/main';
 
 import consoleJs from "./console";
-console.log(consoleJs('FACR'));
+// console.log(consoleJs('FACR')); // logger (FACR)  :  7788/F4, Juarez, Sinaloa
 
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
