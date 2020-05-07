@@ -26,7 +26,8 @@
 ###< friendsofphp/php-cs-fixer ###
 
 .idea/facr-symfony.iml
-
+.idea/workspace.xml
+.idea/*
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/

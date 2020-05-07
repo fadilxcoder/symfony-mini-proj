@@ -68,10 +68,10 @@
 
 
         // Funfact Count JS
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+        // $('.counter').counterUp({
+        //     delay: 10,
+        //     time: 1000
+        // });
 
 
         // Choose Popular Car Isotope
@@ -239,7 +239,7 @@
         jQuery('.preloader').fadeOut();
         jQuery('.preloader-spinner').delay(350).fadeOut('slow');
         jQuery('body').removeClass('loader-active');
-        jQuery(".popular-car-gird").isotope();
+        // jQuery(".popular-car-gird").isotope();
     }); //window load End
 
 

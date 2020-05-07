@@ -1,12 +1,6 @@
-
-// Checking JQuery
-// console.log(jQuery('#footer-area .widget-body a').text()); // Show Location
-
-$('#footer-newsletter button').on('click', function (e) {
-    callFooterAjax(e, Routing.generate('newsletterSubscribe'), $(this));
-});
-
 // Newsletter
+/*
+
 function callFooterAjax(event, path, $this)
 {
     $this.attr('disabled', true);
@@ -18,16 +12,16 @@ function callFooterAjax(event, path, $this)
         data        : $newsletter.serializeArray(),
         url         : path,
         dataType    : 'json',
-        beforeSend  : function () {
+        beforeSend  : function(){
             $('#footer-newsletter .newsletter-btn').html('<i class="fa fa-circle-o-notch fa-spin"></i>');
         },
         success     : function (data) {
             successHandler(data, $this);
         },
-        error       : function (error) {
+        error       : function(error) {
             console.log(error);
         },
-        complete    : function () {
+        complete    : function() {
             $('#footer-newsletter .newsletter-btn').html('<i class="fa fa-send"></i>')
         }
     });
@@ -35,7 +29,7 @@ function callFooterAjax(event, path, $this)
 
 function successHandler(data, $this)
 {
-    // console.log(data.response);
+    console.log(data.response);
     $('#modal-newsletter').modal({
         show: true,
     });
@@ -43,3 +37,4 @@ function successHandler(data, $this)
     $('#modal-newsletter .modal-body').html(data.response.msg)
 }
 
+*/
