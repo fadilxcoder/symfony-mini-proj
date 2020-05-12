@@ -81,9 +81,9 @@
             $(this).addClass('active');
 
             var filterValue = $(this).attr('data-filter');
-            $(".popular-car-gird").isotope({
-                filter: filterValue
-            });
+            // $(".popular-car-gird").isotope({
+            //     filter: filterValue
+            // });
 
             return false;
         }); // Choose Popular Car Isotope End
