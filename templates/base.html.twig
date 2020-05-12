@@ -19,28 +19,17 @@
 
         <!-- Below goes Modals -->
         {%  include 'modals/modal_newsletter.html.twig' %}
+        {% block modals %}{% endblock %}
 
         <!-- Below goes JS -->
 
-{#        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/jquery-migrate.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/popper.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/bootstrap.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/gijgo.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/vegas.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/isotope.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/owl.carousel.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/waypoints.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/counterup.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/magnific-popup.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/slicknav.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/main.js') }}"></script>#}
 {#        <script src="{{ asset('js/script.js') }}"></script>#}
 {#        {% include 'includes/javascript-block.html.twig' %}#}
 {#        {% block javascripts %}{% endblock %}#}
+
         {{ encore_entry_script_tags('app') }}
         <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
         <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-        {{ encore_entry_script_tags('script') }}
+        {{ encore_entry_script_tags('newsletter') }}
     </body>
 </html>
