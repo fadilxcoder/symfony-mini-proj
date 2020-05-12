@@ -41,4 +41,5 @@ yarn-error.log
 .idea/workspace.xml~feature_01
 .idea/
 .idea/workspace.xml
+
 /.env.prod
