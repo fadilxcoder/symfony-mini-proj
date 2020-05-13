@@ -23,6 +23,8 @@ import '../js/main';
 // Usage of require (node.js)
 const scriptVar = require('./Components/Script');
 
+import './Components/Core';
+
 /*
 import consoleJs from "./console";
 console.log(consoleJs('FACR')); // logger (FACR)  :  7788/F4, Juarez, Sinaloa
