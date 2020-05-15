@@ -25,18 +25,12 @@ const scriptVar = require('./Components/Script');
 
 import './Components/Core';
 
-/*
-import consoleJs from "./console";
-console.log(consoleJs('FACR')); // logger (FACR)  :  7788/F4, Juarez, Sinaloa
- */
-
-
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
 // console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
-/* My own codes below */
+/********** My own codes below **********/
 
 export function init()
 {
@@ -44,7 +38,6 @@ export function init()
 }
 
 /* Function to be called once all DOM elements of the page are ready to be used */
-
-$(function(){
+$(function () {
     scriptVar.loggedData();
 });
