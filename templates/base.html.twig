@@ -5,10 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        {{ encore_entry_link_tags('app') }}
-{#        <link href="{{ asset('build/app.css') }}" rel="stylesheet">#}
         <title>MauWorld Best car Rental - {% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+{#            <link href="{{ asset('build/app.css') }}" rel="stylesheet">#}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body class="loader-active">
         {% include 'includes/preloader.html.twig' %}
@@ -18,29 +19,20 @@
         {% include 'includes/scroller.html.twig' %}
 
         <!-- Below goes Modals -->
-        {%  include 'modals/modal_newsletter.html.twig' %}
+        {% block modals %}
+            {%  include 'modals/modal_newsletter.html.twig' %}
+        {% endblock %}
 
         <!-- Below goes JS -->
+        {% block javascripts %}
+            <script type="text/javascript">
+                var currentRouteName = "{{ app.request.get('_route') }}";
+            </script>
 
-{#        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/jquery-migrate.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/popper.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/bootstrap.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/gijgo.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/vegas.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/isotope.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/owl.carousel.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/waypoints.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/counterup.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/magnific-popup.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/plugins/slicknav.min.js') }}"></script>#}
-{#        <script src="{{ asset('js/main.js') }}"></script>#}
-{#        <script src="{{ asset('js/script.js') }}"></script>#}
-{#        {% include 'includes/javascript-block.html.twig' %}#}
-{#        {% block javascripts %}{% endblock %}#}
-        {{ encore_entry_script_tags('app') }}
-        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-        {{ encore_entry_script_tags('script') }}
+            <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('newsletter') }}
+        {% endblock %}
     </body>
 </html>

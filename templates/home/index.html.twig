@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
 {% block body %}
 
     {% import 'macros/HomePageBlock.html.twig' as macro_home_page %}
@@ -511,4 +517,13 @@
         {{ macro_home_page.renderPartners() }}
     {% endif %}
 
+{% endblock %}
+
+{% block modals %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('script') }}
 {% endblock %}
