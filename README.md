@@ -1,18 +1,17 @@
-- **master** branch : files to deploy on PROD (heroku)
-- **develop** branch : *feature* branches to merge with in DEV environment
+# Customized 404 page & IP authorized - Under Maintenance
 
-[ (feature/01, feature/02, .....) ] -> [ develop ] -> [ master ]
+### 503 - Under Maintenance
 
-# Deploying on HEROKU
+- In `config/services.yaml`, add `maintenance` in *parameters*
+- In `config/packages/twig.yaml`, add `maintenance` in *globals*
+- Create a PHP Class : `src/Listener/OnRequestListener`
+- Add `on_request_listener` in `config/services.yaml` 
+- Create your twig to display. **Twig should NOT extend base.html.twig**
 
-- create file : `Profile`
-- change configuration in .env : `APP_ENV=prod`
-- change configuration in *config/packages/prod/monolog.yaml* : `nested > path: "php://stderr"`
-- **Heroku** -> In CMD : `heroku config:set NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false NODE_MODULES_CACHE=false`
-- **Heroku** -> In CMD : `heroku buildpacks:add --index 1 heroku/nodejs` tell Heroku that our project is PHP but NodeJS too
-- Comment `yarn.lock` i.e : `yarn.lock` to `~yarn.lock` to avoid conflict when installing node packages.
-- **Heroku** -> In CMD : `heroku logs --tail` to see logs of heroku process
-- **Git** -> In CMD : `git add .`
-- **Git** -> In CMD : `git commit -m 'your commit message goes here'`
-- **Git** -> In CMD : `git push heroku master`
-- **Heroku** -> In CMD : `heroku run bash -a gfx-your-app-name` connection to heroku terminal
+### 404 - Page not found / 500 - Internal Server Error / 403 - Forbidden Error
+
+- To verify the created page in DEV environment, add `_error/404`, `_error/403` or `_error/404.json`, `_error/403.xml` in URL 
+- Create the error page in `templates/bundles/TwigBundle/Exception`.
+- Depending on errors, create your page : *error404.html.twig*, *error500.html.twig*, ...
+- Need to clear cache : `php bin/console cache:clear`
+- All **error page CAN extend base.html.twig**
