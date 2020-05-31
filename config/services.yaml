@@ -4,6 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    maintenance:
+        status: true
+        ipAuthorized: ["::1","127.0.0.1"]
 
 services:
     # default configuration for services in *this* file
@@ -25,3 +28,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    on_request_listener:
+        class: App\Listener\OnRequestListener
+        arguments:
+            - '%maintenance%'
+            - '@service_container'
+        tags:
+            - name: kernel.event_listener
+              event: kernel.request
+              method: onKernelRequest

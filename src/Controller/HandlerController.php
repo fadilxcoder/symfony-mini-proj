@@ -31,17 +31,18 @@ class HandlerController extends AbstractController
             $errors = $validator->validate($newsletter);
 
             $string = '';
+
             if (count($errors) > 0) {
                 foreach ($errors as $_err) {
                     $string .= '<div class="alert alert-danger" role="alert">'.$_err->getMessage().'</div>';
                 }
-                $response = ['msg' => $string];
             } else {
                 $this->em->persist($newsletter);
                 $this->em->flush();
                 $string .= '<div class="alert alert-success" role="alert">Thank you for subscribing.</div>';
-                $response = ['msg' => $string];
             }
+
+            $response = ['msg' => $string];
         }
 
         return $this->json([
