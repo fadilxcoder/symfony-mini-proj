@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,6 @@
 {#        <link href="{{ asset('build/app.css') }}" rel="stylesheet">#}
         <title>MauWorld Best Car Rental - {% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
->>>>>>> feature/07
     </head>
     <body class="loader-active">
         {% include 'includes/preloader.html.twig' %}
@@ -29,8 +28,12 @@
                 var currentRouteName = "{{ app.request.get('_route') }}";
             </script>
 
+            <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
+            <script src="{{ url('bazinga_jstranslation_js') }}"></script>
+
             <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
             {{ encore_entry_script_tags('app') }}
             {{ encore_entry_script_tags('newsletter') }}
         {% endblock %}

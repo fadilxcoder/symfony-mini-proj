@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a4c4e9609bf6563e0fa3442b85aae01",
+    "content-hash": "9ac5a92f77ffd6f18b412a0b36d8a238",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -642,7 +642,6 @@
         },
         {
             "name": "doctrine/inflector",
-<<<<<<< HEAD
             "version": "1.4.1",
             "source": {
                 "type": "git",
@@ -653,18 +652,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
                 "reference": "4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
-=======
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "ab5de36233a1995f9c776c741b803eb8207aebef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ab5de36233a1995f9c776c741b803eb8207aebef",
-                "reference": "ab5de36233a1995f9c776c741b803eb8207aebef",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -729,11 +716,7 @@
                 "uppercase",
                 "words"
             ],
-<<<<<<< HEAD
             "time": "2020-05-09T15:09:09+00:00"
-=======
-            "time": "2020-05-06T11:01:57+00:00"
->>>>>>> feature/06
         },
         {
             "name": "doctrine/instantiator",
@@ -3939,7 +3922,6 @@
         },
         {
             "name": "symfony/polyfill-intl-icu",
-<<<<<<< HEAD
             "version": "v1.17.0",
             "source": {
                 "type": "git",
@@ -3950,18 +3932,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/4ef3923e4a86e1b6ef72d42be59dbf7d33a685e3",
                 "reference": "4ef3923e4a86e1b6ef72d42be59dbf7d33a685e3",
-=======
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "9c281272735eb66476e0fa7381e03fb0d4b60197"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/9c281272735eb66476e0fa7381e03fb0d4b60197",
-                "reference": "9c281272735eb66476e0fa7381e03fb0d4b60197",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -3974,11 +3944,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.17-dev"
-=======
-                    "dev-master": "1.15-dev"
->>>>>>> feature/06
                 }
             },
             "autoload": {
@@ -4010,7 +3976,6 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "time": "2020-05-12T16:14:59+00:00"
         },
         {
@@ -4025,22 +3990,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/3bff59ea7047e925be6b7f2059d60af31bb46d6a",
                 "reference": "3bff59ea7047e925be6b7f2059d60af31bb46d6a",
-=======
-            "time": "2020-02-27T09:26:54+00:00"
-        },
-        {
-            "name": "symfony/polyfill-intl-idn",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -4054,11 +4003,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.17-dev"
-=======
-                    "dev-master": "1.15-dev"
->>>>>>> feature/06
                 }
             },
             "autoload": {
@@ -4093,7 +4038,6 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "time": "2020-05-12T16:47:27+00:00"
         },
         {
@@ -4108,22 +4052,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fa79b11539418b02fc5e1897267673ba2c19419c",
                 "reference": "fa79b11539418b02fc5e1897267673ba2c19419c",
-=======
-            "time": "2020-03-09T19:04:49+00:00"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -4135,11 +4063,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.17-dev"
-=======
-                    "dev-master": "1.15-dev"
->>>>>>> feature/06
                 }
             },
             "autoload": {
@@ -4173,7 +4097,6 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "time": "2020-05-12T16:47:27+00:00"
         },
         {
@@ -4188,22 +4111,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/f048e612a3905f34931127360bdd2def19a5e582",
                 "reference": "f048e612a3905f34931127360bdd2def19a5e582",
-=======
-            "time": "2020-03-09T19:04:49+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php72",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/37b0976c78b94856543260ce09b460a7bc852747",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -4212,11 +4119,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.17-dev"
-=======
-                    "dev-master": "1.15-dev"
->>>>>>> feature/06
                 }
             },
             "autoload": {
@@ -4249,7 +4152,6 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "time": "2020-05-12T16:47:27+00:00"
         },
         {
@@ -4264,22 +4166,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/a760d8964ff79ab9bf057613a5808284ec852ccc",
                 "reference": "a760d8964ff79ab9bf057613a5808284ec852ccc",
-=======
-            "time": "2020-02-27T09:26:54+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php73",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
->>>>>>> feature/06
                 "shasum": ""
             },
             "require": {
@@ -4288,11 +4174,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.17-dev"
-=======
-                    "dev-master": "1.15-dev"
->>>>>>> feature/06
                 }
             },
             "autoload": {
@@ -4328,11 +4210,7 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
             "time": "2020-05-12T16:47:27+00:00"
-=======
-            "time": "2020-02-27T09:26:54+00:00"
->>>>>>> feature/06
         },
         {
             "name": "symfony/process",
@@ -6083,6 +5961,69 @@
             "time": "2020-04-18T12:12:48+00:00"
         },
         {
+            "name": "willdurand/js-translation-bundle",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/BazingaJsTranslationBundle.git",
+                "reference": "a64af02e1b2193ba77dfbb08a5df14d2c7d3bae4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/a64af02e1b2193ba77dfbb08a5df14d2c7d3bae4",
+                "reference": "a64af02e1b2193ba77dfbb08a5df14d2c7d3bae4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "symfony/console": "~3.4|~4.0|~5.0",
+                "symfony/finder": "~3.4|~4.0|~5.0",
+                "symfony/framework-bundle": "~3.4|~4.0|~5.0",
+                "symfony/intl": "~3.4|~4.0|~5.0",
+                "symfony/translation": "~3.4|~4.0|~5.0",
+                "symfony/twig-bundle": "~3.4|~4.0|~5.0"
+            },
+            "replace": {
+                "willdurand/expose-translation-bundle": "2.5.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|~5.7|~6.5",
+                "symfony/asset": "~3.4|~4.0|~5.0",
+                "symfony/browser-kit": "~3.4|~4.0|~5.0",
+                "symfony/phpunit-bridge": "^5.0",
+                "symfony/twig-bundle": "~3.4|~4.0|~5.0",
+                "symfony/yaml": "~3.4|~4.0|~5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bazinga\\Bundle\\JsTranslationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "A pretty nice way to expose your translation messages to your JavaScript.",
+            "keywords": [
+                "javascript",
+                "symfony",
+                "translation"
+            ],
+            "time": "2020-02-17T14:41:11+00:00"
+        },
+        {
             "name": "willdurand/jsonp-callback-validator",
             "version": "v1.1.0",
             "source": {
@@ -7238,5 +7179,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
