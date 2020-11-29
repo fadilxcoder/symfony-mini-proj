@@ -1,11 +1,11 @@
 {
     "devDependencies": {
+        "@babel/compat-data": "^7.9.0",
         "@symfony/webpack-encore": "^0.28.2",
         "core-js": "^3.0.0",
         "popper.js": "^1.16.1",
         "regenerator-runtime": "^0.13.2",
-        "webpack-notifier": "^1.6.0",
-        "@babel/compat-data": "^7.9.0"
+        "webpack-notifier": "^1.11.0"
     },
     "license": "UNLICENSED",
     "private": true,
