@@ -4,7 +4,8 @@ namespace App\Repository;
 
 use App\Entity\PricingBlock;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+//use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method PricingBlock|null find($id, $lockMode = null, $lockVersion = null)
