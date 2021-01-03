@@ -108,6 +108,9 @@
             "config/routes/fos_js_routing.yaml"
         ]
     },
+    "fzaninotto/faker": {
+        "version": "v1.9.2"
+    },
     "monolog/monolog": {
         "version": "2.1.1"
     },
