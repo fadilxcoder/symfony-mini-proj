@@ -1,3 +1,15 @@
+# Procedure to run application
+
+- Create database : `doctrine:database:create`
+- Migrate entities : `doctrine:migrations:migrate`
+- Populate contents : `doctrine:fixtures:load`
+- Fake data with CLI : `app:populate:db` - **Created command**
+
+# Sub Request
+
+- Method `_newsletterForm` in `HomeController`
+- In twig, use `{{ render(controller('App\\Controller\\HomeController::_newsletterForm', { yr: "now"|date("Y")  })) }}`
+
 # FOS JS Routing Bundle
 
 - command : `composer require friendsofsymfony/jsrouting-bundle`
@@ -51,5 +63,17 @@
 - Create your class `PricingBlockFixtures`
 - Use command to RUN `php bin/console doctrine:fixtures:load --group=pricing-block --append`
 - If `--append` is omitted, 'It will clear DB'
+
+# Commands
+
+- Create folder `src/Command`
+- Create `PopulateDatabaseCommand` class
+- See code base for more details
+
+# Migrations
+
+- Edit `config/packages/doctrine_migrations.yaml` to add configuration for migration folder
+- Run : `php bin/console make:migration` to create migration file
+- Run : `php bin/console doctrine:migrations:migrate` to run migration and create tables
 
 
