@@ -7,6 +7,7 @@ use App\Entity\Partners;
 use App\Entity\PricingBlock;
 use App\Entity\Testimonials;
 use App\Form\HomePageSearchType;
+use App\Repository\VehiculesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,13 +21,22 @@ class HomeController extends AbstractController
     private $entityManager;
 
     /**
+     * @var VehiculesRepository
+     */
+    private $vehiculesRepository;
+
+    /**
      * HomeController constructor.
      *
      * @param EntityManagerInterface $entityManager
+     * @param VehiculesRepository    $vehiculesRepository
      */
-    public function __construct(EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        VehiculesRepository $vehiculesRepository
+    ) {
         $this->entityManager = $entityManager;
+        $this->vehiculesRepository = $vehiculesRepository;
     }
 
     /**
@@ -39,12 +49,14 @@ class HomeController extends AbstractController
         $getBlockPricingDetails = $em->getRepository(PricingBlock::class)->getBlockPricingDetails(true);
         $getTestimonialsDetails = $em->getRepository(Testimonials::class)->getTestimonials();
         $partners = $em->getRepository(Partners::class)->getPartners();
+        $vehicles = $this->vehiculesRepository->selectRandom();
 
         return $this->render('home/index.html.twig', [
             'getBlockPricingDetails' => $getBlockPricingDetails,
             'getTestimonialsDetails' => $getTestimonialsDetails,
             'partners' => $partners,
             'HomePageForm' => $form->createView(),
+            'vehicules' => $vehicles
         ]);
     }
 

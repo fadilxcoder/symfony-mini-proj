@@ -47,4 +47,16 @@ class VehiculesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function selectRandom()
+    {
+        return $this->createQueryBuilder('v')
+            ->addSelect('RAND() as HIDDEN rand')
+            ->where('v.isDisplayed = true')
+            ->orderBy('rand')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

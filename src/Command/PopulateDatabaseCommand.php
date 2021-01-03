@@ -64,6 +64,14 @@ class PopulateDatabaseCommand extends Command
             true,
             false,
         ];
+        $images = [
+            'car-1.jpg',
+            'car-2.jpg',
+            'car-3.jpg',
+            'car-4.jpg',
+            'car-5.jpg',
+            'car-6.jpg',
+        ];
         for ($i = 0; $i < 10; $i++) {
             $vehicules = new Vehicules();
             $vehicules->setName($faker->name);
@@ -77,6 +85,7 @@ class PopulateDatabaseCommand extends Command
             );
             $vehicules->setIsDisplayed($display[rand(0, 1)]);
             $vehicules->setCategory(null);
+            $vehicules->setImage($images[rand(0, 5)]);
             $this->entityManager->persist($vehicules);
         }
 

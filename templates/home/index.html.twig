@@ -156,60 +156,32 @@
                             <div class="tab-pane fade show active" id="popular_cars" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="popular-cars-wrap">
                                     <div class="row popular-car-gird">
-
+                                        {% for _v in vehicules %}
                                         <div class="col-lg-4 col-md-6 con suv mpv">
                                             <div class="single-popular-car">
                                                 <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="{{ asset('images/car/car-1.jpg') }}">
-                                                        <img src="{{ asset('images/car/car-1.jpg') }}" alt="JSOFT">
+                                                    <a class="car-hover" href="{{ asset('images/car/' ~ _v.image) }}">
+                                                        <img src="{{ asset('images/car/' ~ _v.image) }}" alt="{{ _v.name }}">
                                                     </a>
                                                 </div>
 
                                                 <div class="p-car-content">
                                                     <h3>
-                                                        <a href="#">Dodge Ram 1500</a>
-                                                        <span class="price"><i class="fa fa-tag"></i> $55/day</span>
+                                                        <a href="#">{{ _v.name }}</a>
+                                                        <span class="price"><i class="fa fa-tag"></i> ${{ _v.pricePerDay }}/day</span>
                                                     </h3>
 
-                                                    <h5>HATCHBACK</h5>
+                                                    <h5>{{ _v.type }}</h5>
 
                                                     <div class="p-car-feature">
-                                                        <a href="#">2017</a>
-                                                        <a href="#">manual</a>
-                                                        <a href="#">AIR CONDITION</a>
+                                                        <a href="#">{{ _v.year }}</a>
+                                                        <a href="#">{{ _v.fuel }}</a>
+                                                        <a href="#">{{ _v.gearBox }}</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Single Popular Car End -->
-
-                                        <!-- Single Popular Car Start -->
-                                        <div class="col-lg-4 col-md-6 hat sedan">
-                                            <div class="single-popular-car">
-                                                <div class="p-car-thumbnails">
-                                                    <a class="car-hover" href="{{ asset('images/car/car-2.jpg') }}">
-                                                        <img src="{{ asset('images/car/car-2.jpg') }}" alt="JSOFT">
-                                                    </a>
-                                                </div>
-
-                                                <div class="p-car-content">
-                                                    <h3>
-                                                        <a href="#">Dodge Ram 1500</a>
-                                                        <span class="price"><i class="fa fa-tag"></i> $55/day</span>
-                                                    </h3>
-
-                                                    <h5>HATCHBACK</h5>
-
-                                                    <div class="p-car-feature">
-                                                        <a href="#">2017</a>
-                                                        <a href="#">manual</a>
-                                                        <a href="#">AIR CONDITION</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single Popular Car End -->
-
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>

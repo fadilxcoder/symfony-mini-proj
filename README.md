@@ -76,4 +76,10 @@
 - Run : `php bin/console make:migration` to create migration file
 - Run : `php bin/console doctrine:migrations:migrate` to run migration and create tables
 
+# Using SQL `rand()` in doctrine
 
+- GOTO `src/config/packages/doctrine.yaml`
+- Add `dql` under `orm`
+- Check `src/Doctrine/DoctrineHelper`
+- Custom query in `VehiculesRepository`
+- See code base for more details
