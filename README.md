@@ -83,3 +83,8 @@
 - Check `src/Doctrine/DoctrineHelper`
 - Custom query in `VehiculesRepository`
 - See code base for more details
+
+
+# Commands `php bin console ...`
+
+- `php bin/console doctrine:query:sql 'select * from category` : Results array

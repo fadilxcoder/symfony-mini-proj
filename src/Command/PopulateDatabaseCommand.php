@@ -86,7 +86,7 @@ class PopulateDatabaseCommand extends Command
             $vehicules->setIsDisplayed($display[rand(0, 1)]);
             $vehicules->setCategory(null);
             $vehicules->setImage($images[rand(0, 5)]);
-            $this->entityManager->persist($vehicules);
+            // $this->entityManager->persist($vehicules);
         }
 
         $categoriesArr = [
@@ -103,10 +103,10 @@ class PopulateDatabaseCommand extends Command
             $categories =  new Category();
             $categories->setName($value);
             $categories->setSlug(strtolower($slug));
-            $this->entityManager->persist($categories);
+            // $this->entityManager->persist($categories);
         }
 
-        $this->entityManager->flush();
+        // $this->entityManager->flush();
 
         $output->writeln([
             '',
