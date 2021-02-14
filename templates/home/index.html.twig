@@ -167,7 +167,7 @@
 
                                                 <div class="p-car-content">
                                                     <h3>
-                                                        <a href="#">{{ _v.name }}</a>
+                                                        <a href="{{ path('vehicle', {slug: _v.slug}) }}">{{ _v.name }}</a>
                                                         <span class="price"><i class="fa fa-tag"></i> ${{ _v.pricePerDay }}/day</span>
                                                     </h3>
 
