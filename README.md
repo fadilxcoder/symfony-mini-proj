@@ -88,3 +88,7 @@
 # Commands `php bin console ...`
 
 - `php bin/console doctrine:query:sql 'select * from category` : Results array
+
+# Entity (Addons)
+
+- `Vehicules.php` : `@ORM\HasLifecycleCallbacks` , `initSlug()`, `@ORM\PrePersist`, `@ORM\PreUpdate`
