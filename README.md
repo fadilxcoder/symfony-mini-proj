@@ -92,3 +92,7 @@
 # Entity (Addons)
 
 - `Vehicules.php` : `@ORM\HasLifecycleCallbacks` , `initSlug()`, `@ORM\PrePersist`, `@ORM\PreUpdate`
+
+# Symfony Form Collection & Twig / Macros
+
+- Gist repo : https://gist.github.com/fadilxcoder/ee7e7a9ab128a084285e01e348774ba2
