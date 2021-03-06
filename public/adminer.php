@@ -14,6 +14,9 @@ function adminer_object() {
     $plugins = array(
         // specify enabled plugins here
         new AdminerLoginIp(['127.0.0.1']),
+        new AdminerDatabaseShow([
+            'symfony_facr'
+        ]),
     );
     
     /* It is possible to combine customization and plugins:

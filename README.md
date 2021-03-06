@@ -96,3 +96,10 @@
 # Symfony Form Collection & Twig / Macros
 
 - Gist repo : https://gist.github.com/fadilxcoder/ee7e7a9ab128a084285e01e348774ba2
+
+# User Entity / Login / Logout
+
+### CLI
+
+- `php bin/console make:auth`
+- Choose : `[1] Login form authenticator`
