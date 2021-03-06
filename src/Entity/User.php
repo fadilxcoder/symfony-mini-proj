@@ -60,9 +60,19 @@ class User implements UserInterface
     private $token;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true)
      */
-    private $lastlogin;
+    private $isRgpdAccepted;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $rgpdAcceptedAt;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $lastLoginAt;
 
     public function getId(): ?int
     {
@@ -98,7 +108,12 @@ class User implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // $roles[] = 'ROLE_USER';
+        if (empty($roles)) {
+            // guarantee every user at least has ROLE_USER
+            $roles[] = 'ROLE_USER';
+        }
+
 
         return array_unique($roles);
     }
@@ -202,14 +217,38 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getLastlogin(): ?\DateTimeInterface
+    public function getIsRgpdAccepted(): ?bool
     {
-        return $this->lastlogin;
+        return $this->isRgpdAccepted;
     }
 
-    public function setLastlogin(?\DateTimeInterface $lastlogin): self
+    public function setIsRgpdAccepted(?bool $isRgpdAccepted): self
     {
-        $this->lastlogin = $lastlogin;
+        $this->isRgpdAccepted = $isRgpdAccepted;
+
+        return $this;
+    }
+
+    public function getRgpdAcceptedAt(): ?\DateTimeInterface
+    {
+        return $this->rgpdAcceptedAt;
+    }
+
+    public function setRgpdAcceptedAt(?\DateTimeInterface $rgpdAcceptedAt): self
+    {
+        $this->rgpdAcceptedAt = $rgpdAcceptedAt;
+
+        return $this;
+    }
+
+    public function getLastLoginAt(): ?\DateTimeInterface
+    {
+        return $this->lastLoginAt;
+    }
+
+    public function setLastLoginAt(?\DateTimeInterface $lastLoginAt): self
+    {
+        $this->lastLoginAt = $lastLoginAt;
 
         return $this;
     }

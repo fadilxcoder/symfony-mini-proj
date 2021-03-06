@@ -99,7 +99,10 @@
 
 # User Entity / Login / Logout
 
-- User entity : `php bin/console make:user` & choose settings
+- User entity 
+- - `php bin/console make:user` & choose settings 
+- - `php bin/console make:entity` > `User` , Add new properties if needed 
+- - Edit`User.php`, modify `eraseCredentials()`, `getRoles()` if needed
 
 ### CLI
 
