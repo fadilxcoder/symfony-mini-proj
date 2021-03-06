@@ -99,6 +99,8 @@
 
 # User Entity / Login / Logout
 
+- User entity : `php bin/console make:user` & choose settings
+
 ### CLI
 
 - `php bin/console make:auth`
