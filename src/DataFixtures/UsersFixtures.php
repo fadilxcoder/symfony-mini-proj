@@ -29,7 +29,7 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface
                 ->setRoles($data['roles'])
                 ->setFirstName($data['first_name'])
                 ->setLastName($data['last_name'])
-                ->setPassword($this->encoder->encodePassword($user, $data['password']))
+                ->setPlainPassword($data['password'])
                 ->setIsActive($data['is_active'])
                 ->setToken($data['token'])
                 ->setIsRgpdAccepted($data['is_rgpd_accepted'])

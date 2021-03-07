@@ -5,6 +5,10 @@
 - Populate contents : `doctrine:fixtures:load`
 - Fake data with CLI : `app:populate:db` - **Created command**
 
+# URL Ref
+
+- https://symfony.com/doc/current/reference/dic_tags.html (Built-in Symfony Service Tags)
+
 # Sub Request
 
 - Method `_newsletterForm` in `HomeController`
@@ -108,3 +112,5 @@
 
 - Login / Logout functionality
 - `php bin/console make:auth` & choose settings (`[1] Login form authenticator, `LoginFormAuthenticator`, `SecurityController`, ...)
+- Using `Doctrine\HashPasswordListener` & register the Subscriber as a Service `services.yaml`
+- - Manipulate *password* by using getter/setter *plainPassword*

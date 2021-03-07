@@ -38,3 +38,9 @@ services:
             - name: kernel.event_listener
               event: kernel.request
               method: onKernelRequest
+
+    app.doctrine.hash_password_listener:
+        class: App\Doctrine\HashPasswordListener
+        autowire: true
+        tags:
+            - { name: doctrine.event_subscriber }
