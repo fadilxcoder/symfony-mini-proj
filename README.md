@@ -99,12 +99,12 @@
 
 # User Entity / Login / Logout
 
-- User entity 
-- - `php bin/console make:user` & choose settings 
+- Create User entity 
+- - `php bin/console make:user` & choose settings (email as unique)
 - - `php bin/console make:entity` > `User` , Add new properties if needed 
 - - Edit`User.php`, modify `eraseCredentials()`, `getRoles()` if needed
+- - Property ending with `At` (createdAt, lastLoginAt, ...) are detected as *datetime*
 
-### CLI
 
-- `php bin/console make:auth`
-- Choose : `[1] Login form authenticator`
+- Login / Logout functionality
+- `php bin/console make:auth` & choose settings (`[1] Login form authenticator, `LoginFormAuthenticator`, `SecurityController`, ...)
