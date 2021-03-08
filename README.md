@@ -92,6 +92,10 @@
 # Commands `php bin console ...`
 
 - `php bin/console doctrine:query:sql 'select * from category` : Results array
+- `php bin/console make:migration`
+- `php bin/console doctrine:migrations:migrate`
+- `php bin/console doctrine:database:create`
+- `php bin/console doctrine:database:drop`
 
 # Entity (Addons)
 
@@ -112,5 +116,6 @@
 
 - Login / Logout functionality
 - `php bin/console make:auth` & choose settings (`[1] Login form authenticator, `LoginFormAuthenticator`, `SecurityController`, ...)
-- Using `Doctrine\HashPasswordListener` & register the Subscriber as a Service `services.yaml`
-- - Manipulate *password* by using getter/setter *plainPassword*
+- Using `Doctrine\HashPasswordListener` & register the Subscriber as a Service in `services.yaml`
+- - Manipulate *password* by using getter/setter *plainPassword* - Set the plain-text password on the User and encode it automatically via a Doctrine listener when it saves
+- Update method `onAuthenticationSuccess()` in *LoginFormAuthenticator.php*

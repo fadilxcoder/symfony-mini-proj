@@ -4,7 +4,7 @@
         <div class="row">
             <!--== Logo Start ==-->
             <div class="col-lg-4">
-                <a href="" class="logo">
+                <a href="{{ path('home') }}" class="logo">
                     <img src="{{ asset('images/logo.png') }}" alt="FACR">
                 </a>
             </div>
@@ -14,13 +14,7 @@
             <div class="col-lg-8 d-none d-xl-block">
                 <nav class="mainmenu alignright">
                     <ul>
-                        <li class="active"><a href="#">Home</a>
-                            <ul>
-                                <li><a href="">Home 1</a></li>
-                                <li><a href="">Home 2</a></li>
-                                <li><a href="">Home 3</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ path('home') }}">Home</a></li>
                         <li><a href="">Car Rental</a>
                             <ul>
                                 <li><a href="">Small Cars</a></li>
@@ -33,14 +27,19 @@
                         </li>
                         <li><a href="">Airport Transfer</a></li>
                         <li><a href="#">Excursions &amp; Tours</a>
-                        <li><a href="#">Pricing</a>
-                        </li>
                         <li><a href="">Desk</a>
                             <ul>
+                                <li><a href="#">Pricing</a></li>
                                 <li><a href="">About Us</a></li>
                                 <li><a href="">FAQ</a></li>
                                 <li><a href="">Contact Us</a></li>
-                                <li><a href="">Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Account</a>
+                            <ul>
+                                <li><a href="">Register</a></li>
+                                <li><a href="{{ path('app_login') }}">Login</a></li>
+                                <li><a href="{{ path('app_logout') }}">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
