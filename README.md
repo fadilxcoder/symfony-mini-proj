@@ -1,9 +1,9 @@
 # Procedure to run application
 
 - Create database : `doctrine:database:create`
-- Migrate entities : `doctrine:migrations:migrate`
+- Migrate entities : `doctrine:migrations:migrate` OR `doctrine:schema:update --force`
 - Populate contents : `doctrine:fixtures:load`
-- Fake data with CLI : `app:populate:db` - **Created command**
+- (Optional) Fake data with CLI : `app:populate:db` - **Created command**
 
 # URL Ref
 
