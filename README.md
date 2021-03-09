@@ -87,7 +87,7 @@
 - Check `src/Doctrine/DoctrineHelper`
 - Custom query in `VehiculesRepository`
 - See code base for more details
-
+- `rand()` does not work in SQLite, see changes in `VehiculesRepository.php`
 
 # Commands `php bin console ...`
 

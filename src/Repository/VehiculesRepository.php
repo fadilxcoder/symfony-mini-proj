@@ -14,8 +14,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class VehiculesRepository extends ServiceEntityRepository
 {
+    private $environment;
+
     public function __construct(ManagerRegistry $registry)
     {
+        $this->environment = $_ENV['APP_ENV'];
         parent::__construct($registry, Vehicules::class);
     }
 
@@ -50,10 +53,31 @@ class VehiculesRepository extends ServiceEntityRepository
 
     public function selectRandom()
     {
+        if ($this->environment === 'dev') {
+            $this->selectRandomMysql();
+        } else {
+            $this->selectRandomNonMysql();
+        }
+    }
+
+    private function selectRandomMysql()
+    {
         return $this->createQueryBuilder('v')
-            ->addSelect('RAND() as HIDDEN rand')
+            ->addSelect('RAND() as HIDDEN rand')     # RAND()  not working in SQLite
             ->where('v.isDisplayed = true')
             ->orderBy('rand')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    private function selectRandomNonMysql()
+    {
+        return $this->createQueryBuilder('v')
+            // ->addSelect('RAND() as HIDDEN rand')     # RAND()  not working in SQLite
+            ->where('v.isDisplayed = true')
+            // ->orderBy('rand')
             ->setMaxResults(6)
             ->getQuery()
             ->getResult()
