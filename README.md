@@ -91,11 +91,14 @@
 
 # Commands `php bin console ...`
 
-- `php bin/console doctrine:query:sql 'select * from category` : Results array
-- `php bin/console make:migration`
-- `php bin/console doctrine:migrations:migrate`
-- `php bin/console doctrine:database:create`
-- `php bin/console doctrine:database:drop`
+- `php bin/console doctrine:query:sql 'select * from category` : Results array - Write SQL queries
+- `php bin/console make:migration` - Create migrations
+- `php bin/console doctrine:migrations:migrate` - Execute migrations
+- `php bin/console doctrine:database:create` - Create DB
+- `php bin/console doctrine:database:drop` - Delete DB
+- `php bin/console make:subscriber <NameOfSubscriber>` - Create subscriber
+- `php bin/console debug:event-dispatcher <EventName>` - List of all listeners registered
+- `php bin/console debug:autowiring <FullClassNanme>` - List of all of the available services that can be used for autowiring
 
 # Entity (Addons)
 
