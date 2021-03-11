@@ -5,18 +5,23 @@ namespace App\Twig;
 use App\Entity\Partners;
 use App\Entity\PricingBlock;
 use App\Entity\Testimonials;
+use App\Services\HtmlHelper;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Query\Expr\Func;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class AppExtension extends AbstractExtension
 {
-    private $em;
+    private $em, $htmlHelper;
 
-    public function __construct(EntityManagerInterface $em)
-    {
+    public function __construct(
+        EntityManagerInterface $em,
+        HtmlHelper $htmlHelper
+    ) {
         $this->em = $em;
+        $this->htmlHelper = $htmlHelper;
     }
 
     public function getFilters()
@@ -32,6 +37,7 @@ class AppExtension extends AbstractExtension
             new TwigFunction('pricingBlock', [$this, 'getPricingBlock']),
             new TwigFunction('testimonialsBlock', [$this, 'getTestimonials']),
             new TwigFunction('getPartnersDetails', [$this, 'getPartners']),
+            new TwigFunction('sectionify', [$this, 'sectionify'], ['is_safe' => ['html']]),
         ];
     }
 
@@ -44,7 +50,7 @@ class AppExtension extends AbstractExtension
      */
     public function promoPrice($price)
     {
-        if (0 == $price) {
+        if (0 === (int)$price) {
             return 'FREE';
         }
 
@@ -77,6 +83,11 @@ class AppExtension extends AbstractExtension
     public function getPartners()
     {
         return $this->em->getRepository(Partners::class)->getPartners();
+    }
+
+    public Function sectionify($heading, $text) 
+    {
+        return $this->htmlHelper->sectionTitle($heading, $text);
     }
 
 }

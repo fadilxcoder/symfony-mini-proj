@@ -5,9 +5,23 @@
 - Populate contents : `doctrine:fixtures:load`
 - (Optional) Fake data with CLI : `app:populate:db` - **Created command**
 
-# URL Ref
+# Service Container / Dependency Injection / `services.yaml`
 
-- https://symfony.com/doc/current/reference/dic_tags.html (Built-in Symfony Service Tags)
+- In `services.yaml`
+- *autoconfigure: true* : symfony detect the class and make it available for use
+- *autowire: true* : make it possible to be injected
+<pre>
+services:
+  your_service_name_alias:
+    class: App\Directory\ClassName
+    arguments: ["@another_service_name", "plain_text", "%services_yaml_parameter_name"]
+    tags: { name: tag_name*} 
+</pre>
+
+- - *tag_name** - https://symfony.com/doc/current/reference/dic_tags.html (Built-in Symfony Service Tags)
+- - **tags** hook your service into different part of the core system
+- - You can remove the **arguments** when using *autowire: true*, symfony will read the type-hints of each constructor argument
+
 
 # Sub Request
 
@@ -99,6 +113,7 @@
 - `php bin/console make:subscriber <NameOfSubscriber>` - Create subscriber
 - `php bin/console debug:event-dispatcher <EventName>` - List of all listeners registered
 - `php bin/console debug:autowiring <FullClassNanme>` - List of all of the available services that can be used for autowiring
+- `php bin/console debug:container` - List of container services
 
 # Entity (Addons)
 
@@ -122,3 +137,4 @@
 - Using `Doctrine\HashPasswordListener` & register the Subscriber as a Service in `services.yaml`
 - - Manipulate *password* by using getter/setter *plainPassword* - Set the plain-text password on the User and encode it automatically via a Doctrine listener when it saves
 - Update method `onAuthenticationSuccess()` in *LoginFormAuthenticator.php*
+

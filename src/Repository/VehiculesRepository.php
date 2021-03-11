@@ -54,20 +54,21 @@ class VehiculesRepository extends ServiceEntityRepository
     public function selectRandom()
     {
         if ($this->environment === 'dev') {
-            $this->selectRandomMysql();
+            return $this->selectRandomMysql();
         } else {
-            $this->selectRandomNonMysql();
+            return $this->selectRandomNonMysql();
         }
     }
 
     private function selectRandomMysql()
     {
         return $this->createQueryBuilder('v')
-            ->addSelect('RAND() as HIDDEN rand')     # RAND()  not working in SQLite
+            ->addSelect('RAND() as HIDDEN rand')
             ->where('v.isDisplayed = true')
             ->orderBy('rand')
             ->setMaxResults(6)
             ->getQuery()
+            // ->getSQL()
             ->getResult()
         ;
     }
