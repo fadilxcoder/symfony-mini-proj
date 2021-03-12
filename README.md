@@ -7,6 +7,13 @@
 
 # Service Container / Dependency Injection / `services.yaml`
 
+- Service container is like a box that contain classes like twig, mailer, repository, router, session, doctrine, ...
+- These classes are injected in 3 ways :
+- - `src/config/bundles.php`
+- - `src` folder **excluding** some mentionned in services.yaml
+- - `services.yaml` - class installed elsewhere but are registered in this file
+<br>
+
 - In `services.yaml`
 - *autoconfigure: true* : symfony detect the class and make it available for use
 - *autowire: true* : make it possible to be injected
@@ -14,7 +21,7 @@
 services:
   your_service_name_alias:
     class: App\Directory\ClassName
-    arguments: ["@another_service_name", "plain_text", "%services_yaml_parameter_name"]
+    arguments: ["@another_service_name", "plain_text", "%services_yaml_parameter_name", "'%env(ENV_VARIABLE)%"]
     tags: { name: tag_name*} 
 </pre>
 
