@@ -145,3 +145,6 @@ services:
 - - Manipulate *password* by using getter/setter *plainPassword* - Set the plain-text password on the User and encode it automatically via a Doctrine listener when it saves
 - Update method `onAuthenticationSuccess()` in *LoginFormAuthenticator.php*
 
+# Cache
+
+- See `src/Controller/HomeController.php` - `index()` : using cache to save data for 60 seconds
