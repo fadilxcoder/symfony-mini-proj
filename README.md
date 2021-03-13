@@ -150,7 +150,7 @@ services:
 
 - See `src/Controller/HomeController.php` - `index()` : using cache to save data for 60 seconds
 
-# Custum packages
+# Custom packages
 
 - Custom created packages `dev-pack`, check configuration of file structure before installing packages
 - Might need to remove `composer.lock` & then `composer install`
