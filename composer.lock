@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "539b75ffd837d7843daca3da05e2b13a",
+    "content-hash": "19e26dca1e521dca376683d76e781f28",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -1654,6 +1654,38 @@
             ],
             "abandoned": true,
             "time": "2020-12-11T09:56:16+00:00"
+        },
+        {
+            "name": "ghost-dvlpr/string_normalizer",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./dev-pack/string_normalizer",
+                "reference": "4102ab3585ca56d094e7063d5685573bcafaca52"
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "String\\Normalizer\\": "src/"
+                }
+            },
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Fadil",
+                    "email": "fadil@xcoder.dvlpr",
+                    "homepage": "https://github.com/fadilxcoder"
+                }
+            ],
+            "description": "String normalizer package",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "laminas/laminas-code",
@@ -8028,7 +8060,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ghost-dvlpr/string_normalizer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

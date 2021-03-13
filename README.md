@@ -1,9 +1,10 @@
-# Procedure to run application
+# Procedure & Notes to run application
 
 - Create database : `doctrine:database:create`
 - Migrate entities : `doctrine:migrations:migrate` OR `doctrine:schema:update --force`
 - Populate contents : `doctrine:fixtures:load`
 - (Optional) Fake data with CLI : `app:populate:db` - **Created command**
+- `dev-pack` are developped packages that are used in the application
 
 # Service Container / Dependency Injection / `services.yaml`
 
@@ -148,3 +149,10 @@ services:
 # Cache
 
 - See `src/Controller/HomeController.php` - `index()` : using cache to save data for 60 seconds
+
+# Custum packages
+
+- Custom created packages `dev-pack`, check configuration of file structure before installing packages
+- Might need to remove `composer.lock` & then `composer install`
+- Register class in `services.yaml`
+- Use it by depency injection `src/Controller/HomeController.php` - `debugApp`

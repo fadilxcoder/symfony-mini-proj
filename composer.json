@@ -41,7 +41,8 @@
     "symfony/webpack-encore-bundle": "^1.8",
     "symfony/yaml": "5.1.*",
     "twig/extra-bundle": "^2.12|^3.0",
-    "twig/twig": "^2.12|^3.0"
+    "twig/twig": "^2.12|^3.0",
+    "ghost-dvlpr/string_normalizer": "dev-master"
   },
   "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^3.4",
@@ -100,5 +101,11 @@
       "allow-contrib": false,
       "require": "5.1.*"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./dev-pack/string_normalizer"
+    }
+  ]
 }

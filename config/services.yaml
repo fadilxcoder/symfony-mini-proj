@@ -44,3 +44,9 @@ services:
         autowire: true
         tags:
             - { name: doctrine.event_subscriber }
+
+    String\Normalizer\StringNormalizer: ~
+
+    app.dev_pack.string_normalizer:
+        alias: String\Normalizer\StringNormalizer
+        public: true
