@@ -10,12 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class VehicleController extends AbstractController
 {
     /**
-     * @Route("/vehicle/{slug}", name="vehicle")
+     * @Route("/vehicle/{id}/{slug}", name="vehicle")
      */
     public function index(Vehicules $vehicule): Response
     {
         try {
-            dump($vehicule);die;
+            dump($vehicule);
+            
             return $this->render('vehicle/index.html.twig', [
                 'controller_name' => 'VehicleController',
             ]);
