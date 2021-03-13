@@ -26,7 +26,7 @@
                 <!-- Car List Content Start -->
                 <div class="col-lg-12">
                     <div class="car-details-content">
-                        <h2>Aston Martin One-77 <span class="price">Rent: <b>$150</b></span></h2>
+                        <h2>{{ vehicule.name }} <span class="price">Rent: <b>{{ vehicule.pricePerDay|promoPrice }}</b></span></h2>
                         <div class="car-preview-crousel">
                             <div class="single-car-preview">
                                 <img src="{{ asset('images/car/car-5.jpg') }}" alt="">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="car-details-info">
                             <h4>Additional Info</h4>
-                            <p>The Aventador LPER 720-4 50° ise a limited (200 units – 100 Coupe and 100 Roadster) versione of thed Aventadored LP 700-4 commemorating the 50th anniversary of Lamborghini. It included ised increased engine power to 720 PS (530 kW; 710 bhp) via a new specific engine calibration, enlarged and extended front air intakes and the aerodynamic splitter.</p>
+                            <p>{{ vehicule.additionalDetails|raw }}</p>
 
                             <div class="technical-info">
                                 <div class="row">
@@ -48,20 +48,20 @@
                                         <div class="tech-info-table">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Class</th>
-                                                    <td>Compact</td>
+                                                    <th>Year</th>
+                                                    <td>{{ vehicule.year }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Fuel</th>
-                                                    <td>Petrol</td>
+                                                    <td>{{ vehicule.fuel }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Doors</th>
-                                                    <td>5</td>
+                                                    <th>Gear Box</th>
+                                                    <td>{{ vehicule.gearBox }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>GearBox</th>
-                                                    <td>Automatic</td>
+                                                    <th>type</th>
+                                                    <td>{{ vehicule.type }}</td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -70,15 +70,7 @@
                                     <div class="col-lg-6">
                                         <div class="tech-info-list">
                                             <ul>
-                                                <li>ABS</li>
-                                                <li>Air Bags</li>
-                                                <li>Bluetooth</li>
-                                                <li>Car Kit</li>
-                                                <li>GPS</li>
-                                                <li>Music</li>
-                                                <li>Bluetooth</li>
-                                                <li>ABS</li>
-                                                <li>GPS</li>
+                                                {{ specifications|raw }}
                                             </ul>
                                         </div>
                                     </div>

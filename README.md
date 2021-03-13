@@ -30,6 +30,13 @@ services:
 - - **tags** hook your service into different part of the core system
 - - You can remove the **arguments** when using *autowire: true*, symfony will read the type-hints of each constructor argument
 
+# Event Listener / Subscriber / Dispatcher
+
+- ### Event Listener
+
+- Listen on `kernel.event_listener` for event `kernel.controller` - see `services.yaml`
+- Handling in `src/Listener/OnControllerListener.php`
+
 
 # Sub Request
 

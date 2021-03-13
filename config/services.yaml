@@ -50,3 +50,12 @@ services:
     app.dev_pack.string_normalizer:
         alias: String\Normalizer\StringNormalizer
         public: true
+
+    on_controller_listener:
+        class: App\Listener\OnControllerListener
+        tags:
+            - name: kernel.event_listener
+              event: kernel.controller
+              method: onKernelController
+
+    
