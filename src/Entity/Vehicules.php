@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\VehiculesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 
@@ -73,6 +75,16 @@ class Vehicules
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity=VehiculesStats::class, mappedBy="vehicules")
+     */
+    private $vehiculesStats;
+
+    public function __construct()
+    {
+        $this->vehiculesStats = new ArrayCollection();
+    }
 
     /**
      * Init the slug of vehicule by name
@@ -223,6 +235,36 @@ class Vehicules
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|VehiculesStats[]
+     */
+    public function getVehiculesStats(): Collection
+    {
+        return $this->vehiculesStats;
+    }
+
+    public function addVehiculesStat(VehiculesStats $vehiculesStat): self
+    {
+        if (!$this->vehiculesStats->contains($vehiculesStat)) {
+            $this->vehiculesStats[] = $vehiculesStat;
+            $vehiculesStat->setVehicules($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVehiculesStat(VehiculesStats $vehiculesStat): self
+    {
+        if ($this->vehiculesStats->removeElement($vehiculesStat)) {
+            // set the owning side to null (unless already changed)
+            if ($vehiculesStat->getVehicules() === $this) {
+                $vehiculesStat->setVehicules(null);
+            }
+        }
 
         return $this;
     }

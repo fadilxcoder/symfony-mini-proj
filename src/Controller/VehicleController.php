@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Vehicules;
+use App\EventSubscriber\Events;
+use App\EventSubscriber\Events\VehicleEvent;
 use App\Services\VehiclesServices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,9 +18,17 @@ class VehicleController extends AbstractController
      */
     private $vehiclesServices;
 
-    public function __construct(VehiclesServices $vehiclesServices)
-    {
+    /**
+     * @var EventDispatcherInterface
+     */
+    private $eventDispatcher;
+
+    public function __construct(
+        VehiclesServices $vehiclesServices,
+        EventDispatcherInterface $eventDispatcher
+    ) {
         $this->vehiclesServices = $vehiclesServices;
+        $this->eventDispatcher = $eventDispatcher;
     }
 
     /**
@@ -27,6 +38,8 @@ class VehicleController extends AbstractController
     {
         try 
         {
+            $this->eventDispatcher->dispatch(new VehicleEvent($vehicule), Events::VEHICLES_CLICKED);
+
             return $this->render('vehicle/index.html.twig', [
                 'vehicule' => $vehicule,
                 'specifications' => $this->vehiclesServices->getRandomSpecifications(),

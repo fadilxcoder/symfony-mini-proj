@@ -35,13 +35,13 @@ class OnControllerListener
             if ($route == 'vehicle') {
                 $id = $event->getRequest()->attributes->get('id');
                 $slug = $event->getRequest()->attributes->get('slug');
-                $isValid = $this->vehiculesRepository->findBy([
+                $isValid = $this->vehiculesRepository->findOneBy([
                     'id' => $id,
                     'isDisplayed' => true,
                     'slug' => $slug
                 ]);
 
-                if (0 === count($isValid)) {
+                if (!(bool)$isValid) {
                     throw new AccessDeniedHttpException();
                 }
 

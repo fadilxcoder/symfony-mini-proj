@@ -32,10 +32,27 @@ services:
 
 # Event Listener / Subscriber / Dispatcher
 
+- List of Kernel Events : https://symfony.com/doc/current/reference/events.html
+- Events and Event Listeners : https://symfony.com/doc/current/event_dispatcher.html
+- Event subscriber always know which event they are listening to (Knowledge of the event is kept in the class) compared to event listener where we have to register it in `services.yaml` and use *tags* to listen to a particular event
+
 - ### Event Listener
 
 - Listen on `kernel.event_listener` for event `kernel.controller` - see `services.yaml`
 - Handling in `src/Listener/OnControllerListener.php`
+
+- ### Event Subscriber
+
+- Listen on `security.interactive_login` in `src/EventSubscriber/LoginListenerSubscriber.php`
+
+- ### Event Dispatcher
+
+- Dispatch events (when something happen, an avent can be triggered), see how it work:
+- - `src/Controller/VehicleController.php` - Dispatch it
+- - `src/EventSubscriber/Events.php` - Naming of events
+- - `src/EventSubscriber/Events/VehicleEvent.php` - The event class
+- - `src/EventSubscriber/AppSubscriber.php` - Logic handling
+- The EventDispatcher Component : https://symfony.com/doc/current/components/event_dispatcher.html
 
 
 # Sub Request

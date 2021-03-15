@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -70,6 +72,16 @@ class User implements UserInterface
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $lastLoginAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity=VehiculesStats::class, mappedBy="user")
+     */
+    private $vehiculesStats;
+
+    public function __construct()
+    {
+        $this->vehiculesStats = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -247,6 +259,36 @@ class User implements UserInterface
     public function setLastLoginAt(?\DateTimeInterface $lastLoginAt): self
     {
         $this->lastLoginAt = $lastLoginAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|VehiculesStats[]
+     */
+    public function getVehiculesStats(): Collection
+    {
+        return $this->vehiculesStats;
+    }
+
+    public function addVehiculesStat(VehiculesStats $vehiculesStat): self
+    {
+        if (!$this->vehiculesStats->contains($vehiculesStat)) {
+            $this->vehiculesStats[] = $vehiculesStat;
+            $vehiculesStat->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVehiculesStat(VehiculesStats $vehiculesStat): self
+    {
+        if ($this->vehiculesStats->removeElement($vehiculesStat)) {
+            // set the owning side to null (unless already changed)
+            if ($vehiculesStat->getUser() === $this) {
+                $vehiculesStat->setUser(null);
+            }
+        }
 
         return $this;
     }
