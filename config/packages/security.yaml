@@ -35,5 +35,14 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY } # whitelisted
+        - { path: ^/booking, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+    
+    # Users with the ROLE_SUPPORT role will also have the ROLE_USER role. 
+    # And users with ROLE_ADMIN, will automatically have ROLE_SUPPORT, ROLE_ALLOWED_TO_SWITCH and ROLE_USER (inherited from ROLE_SUPPORT).
+    # ROLE_ALLOWED_TO_SWITCH used for impersonation
+    role_hierarchy:
+        ROLE_SUPPORT: ROLE_USER
+        ROLE_ADMIN: [ROLE_SUPPORT, ROLE_ALLOWED_TO_SWITCH]

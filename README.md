@@ -137,7 +137,7 @@ services:
 
 # Commands `php bin console ...`
 
-- `php bin/console doctrine:query:sql 'select * from category` : Results array - Write SQL queries
+- `php bin/console doctrine:query:sql 'select * from category'` / `... d:q:s 'select * from category'` : Results array - Write SQL queries
 - `php bin/console make:migration` - Create migrations
 - `php bin/console doctrine:migrations:migrate` - Execute migrations
 - `php bin/console doctrine:database:create` - Create DB

@@ -54,7 +54,7 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface
 
             $response[] = [
                 'email' => $faker->email,
-                'roles' => ['ROLE_USER'],
+                'roles' => $faker->randomElement([['ROLE_USER'], ['ROLE_SUPPORT'], ['ROLE_ADMIN']]),
                 'password' => 'admin123',
                 'first_name' => $faker->firstName($gender),
                 'last_name' => $faker->lastName($gender),
