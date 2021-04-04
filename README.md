@@ -180,3 +180,8 @@ services:
 - Might need to remove `composer.lock` & then `composer install`
 - Register class in `services.yaml`
 - Use it by depency injection `src/Controller/HomeController.php` - `debugApp`
+
+# API platform
+
+- Install : `composer req api`
+- URL : `<your_base_url>/api`
