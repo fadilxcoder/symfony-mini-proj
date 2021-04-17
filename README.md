@@ -181,7 +181,27 @@ services:
 - Register class in `services.yaml`
 - Use it by depency injection `src/Controller/HomeController.php` - `debugApp`
 
-# API platform
+# Mailer
 
-- Install : `composer req api`
-- URL : `<your_base_url>/api`
+- `src/Mailer/BaseMailer.php` can be used in services by passing arguments and returning the `$templateEmail`
+<pre>
+// The templated object
+$templateEmail = BaseMailer::getEmailObject(
+    $sender,
+    $to,
+    $subject,
+    'emails/your_twig_file.html.twig',
+    [
+        'message' => $messageString,
+        'application_name' => $this->applicationName,
+    ]
+);
+
+$templateEmail->addReplyTo($sender);
+
+// Send the email
+$this->mailer->send($templateEmail);
+</pre>
+
+- `src/Mailer/AuthMailer.php` send email to user on each connection (event subscriber) to plateform
+- `src/templates/base-email.html.twig` - email base template

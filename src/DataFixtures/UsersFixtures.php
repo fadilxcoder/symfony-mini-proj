@@ -7,11 +7,14 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use PhpParser\Node\Stmt\Const_;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UsersFixtures extends Fixture implements FixtureGroupInterface
 {
     private const ROW = 10;
+
+    private const PASSWD = 'admin123';
 
     private $encoder;
 
@@ -55,7 +58,7 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface
             $response[] = [
                 'email' => $faker->email,
                 'roles' => $faker->randomElement([['ROLE_USER'], ['ROLE_SUPPORT'], ['ROLE_ADMIN']]),
-                'password' => 'admin123',
+                'password' => self::PASSWD,
                 'first_name' => $faker->firstName($gender),
                 'last_name' => $faker->lastName($gender),
                 'is_active' => $faker->randomElement([true, false]),

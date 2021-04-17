@@ -1,0 +1,6 @@
+email.footer: Regards.
+
+connexion:
+  subject: '[%application_name%] New connection detected !'
+  heading: Hi %fullname%
+  line1: Someone logged in your account at %time% .

@@ -37,9 +37,11 @@
                         </li>
                         <li><a href="">Account</a>
                             <ul>
-                                <li><a href="">Register</a></li>
-                                <li><a href="{{ path('app_login') }}">Login</a></li>
-                                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                                {% if(is_granted('IS_AUTHENTICATED_FULLY')) %}
+                                    <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                                {% else %}
+                                    <li><a href="{{ path('app_login') }}">Login</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                     </ul>
