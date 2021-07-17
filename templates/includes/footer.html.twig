@@ -1,0 +1,26 @@
+<section id="footer-area">
+    <div class="footer-widget-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6">
+                    {# Sub Request#}
+                    {{ render(controller('App\\Controller\\HomeController::_newsletterForm', { yr: "now"|date("Y")  })) }}
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="single-footer-widget">
+                        <h2>Get In Touch</h2>
+                        <div class="widget-body">
+                            <ul class="get-touch">
+                                <li><i class="fa fa-map-marker"></i> 7788/F4, Juarez, Sinaloa</li>
+                                <li><i class="fa fa-mobile"></i> +232 01 86 25 72 43</li>
+                                <li><i class="fa fa-envelope"></i> fadilxcoder@gmail.com</li>
+                            </ul>
+                            <a href="https://g.page/fadilxcoder?share" class="map-show" target="_blank">Show Location</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'includes/copyright.html.twig' %}
+</section>

@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+        {{ encore_entry_link_tags('app') }}
+{#        <link href="{{ asset('build/app.css') }}" rel="stylesheet">#}
+        <title>MauWorld Best Car Rental - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="loader-active">
+        {% include 'includes/preloader.html.twig' %}
+        {% include'includes/header.html.twig' %}
+        {% block body %}{% endblock %}
+        {% include 'includes/footer.html.twig' %}
+        {% include 'includes/scroller.html.twig' %}
+
+        <!-- Below goes Modals -->
+        {% block modals %}
+            {%  include 'modals/modal_newsletter.html.twig' %}
         {% endblock %}
 
+        <!-- Below goes JS -->
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <script type="text/javascript">
+                var currentRouteName = "{{ app.request.get('_route') }}";
+            </script>
+
+            <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('newsletter') }}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
     </body>
 </html>

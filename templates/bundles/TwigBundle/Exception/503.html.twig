@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MauWorld Best Car Rental</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial;
+                font-size: 17px;
+            }
+
+            #myVideo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .content {
+                position: fixed;
+                bottom: 35%;
+                background: rgba(0, 0, 0, 0.5);
+                color: #f1f1f1;
+                width: 100%;
+                padding: 20px;
+                top: 35%;
+                text-align: center;
+            }
+
+            h1{
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            img{
+                display: block;
+                margin: 0 auto;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="{{ asset('others/videos/uc.mp4') }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <div class="content">
+            <h1>WEBSITE UNDER MAINTENANCE</h1>
+            <span>*Restricted By IP</span>
+            <img src="{{ asset('images/logo.png') }}" />
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{% extends 'base-email.html.twig' %}
+{% trans_default_domain 'emails' %}
+
+{% block mailContent %}
+    <h2>{{ 'connexion.heading'|trans({'%fullname%' : user.fullName}) }}</h2>
+    <p>{{ 'connexion.line1'|trans({'%time%' : time}) }}</p>
+    <p>{{ 'email.footer'|trans }}</p>
+{% endblock %}

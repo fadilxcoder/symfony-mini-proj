@@ -1,0 +1,85 @@
+{% macro renderPricingBlock() %}
+    {% set pb = pricingBlock(true) %}
+
+    <section id="pricing-area" class="section-padding overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        {{ sectionify('Only quality for clients', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.') }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for _pb in pb %}
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-pricing-table">
+                        <h3>{{ _pb.title }}</h3>
+                        <h2>{{ _pb.price|promoPrice }}</h2>
+                        <h5>{{ _pb.type }}</h5>
+                        {{ _pb.description|raw }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endmacro %}
+
+{% macro renderTestimonials() %}
+
+    <section id="testimonial-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Section Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        {{ sectionify('Testimonials', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.') }}
+                    </div>
+                </div>
+                <!-- Section Title End -->
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-12 m-auto">
+                    <div class="testimonial-content">
+                        {% for _testimonialsBlock in testimonialsBlock() %}
+                        <div class="single-testimonial">
+                            <p>{{ _testimonialsBlock.description }}</p>
+                            <h3>{{ _testimonialsBlock.name }}</h3>
+                            <div class="client-logo">
+                                <img src="{{ asset('images/client/'~_testimonialsBlock.image) }}" alt="JSOFT">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endmacro %}
+
+{% macro renderPartners() %}
+
+    <div id="partner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="partner-content-wrap">
+                        {% for _partners in getPartnersDetails() %}
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="{{ asset('images/partner/'~_partners.image) }}" alt="{{ _partners.name }}" title="{{ _partners.name }}">
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endmacro %}

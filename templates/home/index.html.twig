@@ -1,0 +1,212 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'home'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% import 'macros/HomePageBlock.html.twig' as macro_home_page %}
+
+{% block body %}
+    <section id="slider-area">
+        <div class="single-slide-item overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="book-a-car">
+                            {{ form_start(HomePageForm) }}
+                                <div class="pickup-location book-item">
+                                    <h4>{{ form_label(HomePageForm.pick_up_location) }}</h4>
+                                    {{ form_widget(HomePageForm.pick_up_location) }}
+                                </div>
+                                <div class="pick-up-date book-item">
+                                    <h4>{{ form_label(HomePageForm.pick_up_date) }}</h4>
+                                    {{ form_widget(HomePageForm.pick_up_date, { 'id':'startDate' }) }}
+                                    <div class="return-car">
+                                        <h4>{{ form_label(HomePageForm.return_date) }}</h4>
+                                        {{ form_widget(HomePageForm.return_date, { 'id':'endDate' }) }}
+                                    </div>
+                                </div>
+                                <div class="choose-car-type book-item">
+                                    <h4>{{ form_label(HomePageForm.car_type) }}</h4>
+                                    {{ form_widget(HomePageForm.car_type) }}
+                                </div>
+                                <div class="book-button text-center">
+                                    {{ form_widget(HomePageForm.book_now) }}
+                                </div>
+                                {{ form_widget(HomePageForm._token) }}
+                            {{ form_end(HomePageForm, {'render_rest': false}) }}
+                        </div>
+                    </div>
+                    <div class="col-lg-7 text-right">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="slider-right-text">
+                                    <h1>BOOK A CAR TODAY!</h1>
+                                    <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Section Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        {{ sectionify('About us', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.') }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="display-table">
+                        <div class="display-table-cell">
+                            <div class="about-content">
+                                <p>Lorem simply dummy is a texted of the printing costed and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                                <p>{{ stringNrmlz }}</p>
+                                <div class="about-btn">
+                                    <a href="#">Book a Car</a>
+                                    <a href="#">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-video">
+                        <iframe src="https://player.vimeo.com/video/121982328?title=0&byline=0&portrait=0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funfact-area" class="overlay section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 col-md-12 m-auto">
+                    <div class="funfact-content-wrap">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-funfact">
+                                    <div class="funfact-icon">
+                                        <i class="fa fa-smile-o"></i>
+                                    </div>
+                                    <div class="funfact-content">
+                                        <p><span class="counter">550</span>+</p>
+                                        <h4>HAPPY CLIENTS</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-funfact">
+                                    <div class="funfact-icon">
+                                        <i class="fa fa-car"></i>
+                                    </div>
+                                    <div class="funfact-content">
+                                        <p><span class="counter">250</span>+</p>
+                                        <h4>CARS IN STOCK</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-funfact">
+                                    <div class="funfact-icon">
+                                        <i class="fa fa-bank"></i>
+                                    </div>
+                                    <div class="funfact-content">
+                                        <p><span class="counter">50</span>+</p>
+                                        <h4>office in cities</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="choose-car" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        {{ sectionify('Choose your Car', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="choose-content-wrap">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="popular_cars" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="popular-cars-wrap">
+                                    <div class="row popular-car-gird">
+                                        {% for _v in vehicules %}
+                                        <div class="col-lg-4 col-md-6 con suv mpv">
+                                            <div class="single-popular-car">
+                                                <div class="p-car-thumbnails">
+                                                    <a class="car-hover" href="{{ asset('images/car/' ~ _v.image) }}">
+                                                        <img src="{{ asset('images/car/' ~ _v.image) }}" alt="{{ _v.name }}">
+                                                    </a>
+                                                </div>
+
+                                                <div class="p-car-content">
+                                                    <h3>
+                                                        <a href="{{ path('vehicle', {id: _v.id, slug: _v.slug}) }}">{{ _v.name }}</a>
+                                                        <span class="price"><i class="fa fa-tag"></i> ${{ _v.pricePerDay }}/day</span>
+                                                    </h3>
+
+                                                    <h5>{{ _v.type }}</h5>
+
+                                                    <div class="p-car-feature">
+                                                        <a href="#">{{ _v.year }}</a>
+                                                        <a href="#">{{ _v.fuel }}</a>
+                                                        <a href="#">{{ _v.gearBox }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {#  Using macros - price block  #}
+    {% if getBlockPricingDetails|length > 0 %}
+        {{ macro_home_page.renderPricingBlock() }}
+    {% endif %}
+
+    {% if getTestimonialsDetails|length > 0 %}
+        {{ macro_home_page.renderTestimonials() }}
+    {% endif %}
+
+    {% if partners|length > 0 %}
+        {{ macro_home_page.renderPartners() }}
+    {% endif %}
+
+{% endblock %}
+
+{% block modals %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('script') }}
+{% endblock %}

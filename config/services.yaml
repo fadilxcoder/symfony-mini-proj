@@ -4,6 +4,11 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    maintenance:
+        status: true
+        ipAuthorized: ["::1","127.0.0.1"]
+    application_name: 'MauWorld Best Car Rental'
+    # profile_settings_directory: '%kernel.project_dir%/public/images'
 
 services:
     # default configuration for services in *this* file
@@ -23,3 +28,31 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    on_request_listener:
+        class: App\Listener\OnRequestListener
+        arguments:
+            - '%maintenance%'
+            - '@service_container'
+        tags:
+            - name: kernel.event_listener
+              event: kernel.request
+              method: onKernelRequest
+
+    app.doctrine.hash_password_listener:
+        class: App\Doctrine\HashPasswordListener
+        autowire: true
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    String\Normalizer\StringNormalizer: ~
+
+    app.dev_pack.string_normalizer:
+        alias: String\Normalizer\StringNormalizer
+        public: true
+
+    on_controller_listener:
+        class: App\Listener\OnControllerListener
+        tags:
+            - name: kernel.event_listener
+              event: kernel.controller
+              method: onKernelController
