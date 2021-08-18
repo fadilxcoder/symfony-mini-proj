@@ -5,13 +5,13 @@ namespace App\Doctrine;
 use App\Entity\User;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class HashPasswordListener implements EventSubscriber
 {
     private $encoder;
 
-    public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
     }
@@ -69,7 +69,7 @@ class HashPasswordListener implements EventSubscriber
             return;
         }
 
-        $encoded = $this->encoder->encodePassword($entity, $password);
+        $encoded = $this->encoder->hashPassword($entity, $password);
         $entity->setPassword($encoded);
     }
 }

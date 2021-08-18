@@ -1,5 +1,6 @@
 security:
-    encoders:
+#    encoders:
+    password_hashers:
         App\Entity\User:
             algorithm: auto
             

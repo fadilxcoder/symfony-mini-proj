@@ -5,6 +5,7 @@
 - Populate contents : `doctrine:fixtures:load`
 - (Optional) Fake data with CLI : `app:populate:db` - **Created command**
 - `dev-pack` are developped packages that are used in the application
+- **OR SIMPLY DO A** `php bin/console doctrine:database:drop --force && php bin/console doctrine:database:create && php bin/console doctrine:migrations:migrate && php bin/console doctrine:fixtures:load`
 
 # Deploying on HEROKU
 

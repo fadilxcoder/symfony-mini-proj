@@ -16,11 +16,8 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface
 
     private const PASSWD = 'admin123';
 
-    private $encoder;
-
-    public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct()
     {
-        $this->encoder = $encoder;
     }
 
     public function load(ObjectManager $manager)
@@ -60,7 +57,7 @@ class UsersFixtures extends Fixture implements FixtureGroupInterface
                 'roles' => $faker->randomElement([['ROLE_USER'], ['ROLE_SUPPORT'], ['ROLE_ADMIN']]),
                 'password' => self::PASSWD,
                 'first_name' => $faker->firstName($gender),
-                'last_name' => $faker->lastName($gender),
+                'last_name' => $faker->lastName(),
                 'is_active' => $faker->randomElement([true, false]),
                 'token' => null,
                 'is_rgpd_accepted' => false,
