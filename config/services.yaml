@@ -56,3 +56,5 @@ services:
             - name: kernel.event_listener
               event: kernel.controller
               method: onKernelController
+
+    Redis: '@snc_redis.default'

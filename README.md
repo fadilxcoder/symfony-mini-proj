@@ -229,3 +229,12 @@ $this->mailer->send($templateEmail);
 - GOTO `https://tarteaucitron.io/en/install/` > `Free manual inst...` > `Next step` > `Search...`
 - Added library JS in `base.html.twig`
 - Init library in `assets/js/app.js` & css overriding
+
+# Redis
+
+- `composer require snc/redis-bundle`
+- *FIX* : add `.dll` in `php.ini`
+- Added `REDIS_URL` in `.env.dev`
+- Using `Redis: '@snc_redis.default'` in `services.yaml`
+- Configure connection in `snc_redis.yaml`
+- Using redis cache in `HomeController.php`

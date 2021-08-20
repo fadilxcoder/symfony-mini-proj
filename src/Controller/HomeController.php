@@ -9,6 +9,7 @@ use App\Entity\Testimonials;
 use App\Form\HomePageSearchType;
 use App\Mailer\AuthMailer;
 use App\Repository\VehiculesRepository;
+use \Redis;
 use String\Normalizer\StringNormalizer;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Contracts\Cache\ItemInterface;
@@ -48,12 +49,14 @@ class HomeController extends AbstractController
         EntityManagerInterface $entityManager,
         VehiculesRepository $vehiculesRepository,
         CacheInterface $cacheInterface,
-        StringNormalizer $stringNormalizer
+        StringNormalizer $stringNormalizer,
+        Redis $redis
     ) {
         $this->entityManager = $entityManager;
         $this->vehiculesRepository = $vehiculesRepository;
         $this->cacheInterface = $cacheInterface;
         $this->stringNormalizer = $stringNormalizer;
+        $this->redis = $redis;
     }
 
     /**
@@ -100,7 +103,13 @@ class HomeController extends AbstractController
 
     public function theNormalizer()
     {
-        $str = 'Nadine et Charles se sont rencontrés par hasard sur les Champs-Élysées. Ils sont amis depuis longtemps.À Montréal, ils fréquentaient les mêmes endroits, ils allaient régulièrement prendre un verre ou dîner dans la rue Sainte-Sophie.';
+        $str = 'Charles et Nadine se sont rencontrés par hasard sur les Champs-Élysées. Ils sont amis depuis longtemps.À Montréal, ils fréquentaient les mêmes endroits, ils allaient régulièrement prendre un verre ou dîner dans la rue Sainte-Sophie.';
+
+        if ($this->redis->get('symfony:homepage:about')) {
+            return $this->redis->get('symfony:homepage:about');
+        }
+
+        $this->redis->set('symfony:homepage:about', $this->stringNormalizer->convert($str), 60);
 
         return $this->stringNormalizer->convert($str);
     }
