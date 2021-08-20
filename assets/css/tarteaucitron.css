@@ -1,0 +1,21 @@
+/*******************************************************/
+/* tarteaucitron */
+/*******************************************************/
+
+#tarteaucitronAlertBig #tarteaucitronPersonalize,
+    #tarteaucitronRoot #tarteaucitronPercentage,
+    #tarteaucitronAlertSmall #tarteaucitronManager #tarteaucitronDot #tarteaucitronDotGreen {
+    background: #E61071 !important;
+}
+#tarteaucitronAlertBig {
+    background-color: rgba(0,0,0,0.8) !important;
+}
+#tarteaucitronDisclaimerAlert, #tarteaucitronDisclaimerAlert strong, #tarteaucitronAlertBig #tarteaucitronPrivacyUrl {
+    color: #fff !important;
+}
+#tarteaucitronAlertSmall {
+    background-color: rgba(0,0,0,0.5) !important;
+}
+#tarteaucitronAlertBig #tarteaucitronPersonalize, #tarteaucitronAlertBig #tarteaucitronCloseAlert {
+    border-radius: 3px !important;
+}

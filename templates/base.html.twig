@@ -27,7 +27,7 @@
             <script type="text/javascript">
                 var currentRouteName = "{{ app.request.get('_route') }}";
             </script>
-
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tarteaucitronjs/1.9.3/tarteaucitron.min.js"></script>
             <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 

@@ -221,3 +221,11 @@ $this->mailer->send($templateEmail);
 
 - `src/Mailer/AuthMailer.php` send email to user on each connection (event subscriber) to plateform
 - `src/templates/base-email.html.twig` - email base template
+
+# RGPD Cookie - (tarteaucitron.js)
+
+- (https://github.com/AmauriC/tarteaucitron.js) Git Repo
+- https://tarteaucitron.io/en/ (Docs)
+- GOTO `https://tarteaucitron.io/en/install/` > `Free manual inst...` > `Next step` > `Search...`
+- Added library JS in `base.html.twig`
+- Init library in `assets/js/app.js` & css overriding
