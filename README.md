@@ -69,6 +69,16 @@ services:
 - - `src/EventSubscriber/AppSubscriber.php` - Logic handling
 - The EventDispatcher Component : https://symfony.com/doc/current/components/event_dispatcher.html
 
+- ### List of events
+- Found in `vendor/symfony/http-kernel/KernelEvents.php`
+- - `kernel.request`
+- - `kernel.exception`
+- - `kernel.controller`
+- - `kernel.controller_arguments`
+- - `kernel.view`
+- - `kernel.response`
+- - `kernel.finish_request`
+- - `kernel.terminate`
 
 # Sub Request
 
