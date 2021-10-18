@@ -47,6 +47,40 @@ services:
 
 # Event Listener / Subscriber / Dispatcher
 
+## Mechanism
+
+- **Controller / Services**
+- `$vehicule` object is sent to the `VehicleEvent` class when the events `Events::VEHICLES_CLICKED` is dispatched
+```
+   public function index(Vehicules $vehicule): Response
+    {
+        try 
+        {
+            $this->eventDispatcher->dispatch(new VehicleEvent($vehicule), Events::VEHICLES_CLICKED);
+            ...
+  ```
+- **Events action constant class**
+```
+final class Events
+{
+    const VEHICLES_CLICKED = 'vehicules.clicked';
+}
+```
+- **Event class**
+```
+public function __construct(Vehicules $vehicule)
+...
+
+public function getVehicle() : Vehicules
+...
+```
+- The class that is is sent to the `listener` / `subscriber` by dependency injection
+- `src/EventSubscriber/Events/VehicleEvent.php` - takes in `$vehicule` object as parameter in constructor
+- In `listener` / `subscriber` (`src/EventSubscriber/AppSubscriber.php`), argument for methods `(VehicleEvent $event)` and therefor can access methods of class `VehicleEvent` 
+- **Event Subscriber** had to `implements EventSubscriberInterface` & obligated to implement one method: `public static function getSubscribedEvents` - must return an `array`
+
+## Docs
+
 - List of Kernel Events : https://symfony.com/doc/current/reference/events.html
 - Events and Event Listeners : https://symfony.com/doc/current/event_dispatcher.html
 - Event subscriber always know which event they are listening to (Knowledge of the event is kept in the class) compared to event listener where we have to register it in `services.yaml` and use *tags* to listen to a particular event
