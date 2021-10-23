@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Vehicules;
 use App\EventSubscriber\Events;
 use App\EventSubscriber\Events\VehicleEvent;
+use App\Repository\DriversRepository;
 use App\Services\VehiclesServices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -49,5 +50,18 @@ class VehicleController extends AbstractController
         {
             throw $this->createNotFoundException('Not found !');
         }
+    }
+
+    /**
+     * @Route("/available-drivers/{id}/{slug}", name="drivers")
+     */
+    public function drivers(DriversRepository $driversRepository, Vehicules $vehicules)
+    {
+        $this->denyAccessUnlessGranted('show_drivers', $vehicules);
+
+        return $this->render('drivers/index.html.twig', [
+            'drivers' => $driversRepository->findAll(),
+            'specifications' => $this->vehiclesServices->getRandomSpecifications(),
+        ]);
     }
 }

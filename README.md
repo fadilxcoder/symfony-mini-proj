@@ -282,3 +282,13 @@ $this->mailer->send($templateEmail);
 - Using `Redis: '@snc_redis.default'` in `services.yaml`
 - Configure connection in `snc_redis.yaml`
 - Using redis cache in `HomeController.php`
+
+# Voters
+
+- Access Control List (ACL) - Handle permission in different section in app
+- Command : `php bin/console make:voter`, will create file in `src/Security/Voter/...`
+- Create a `Driver` entity as voters will be used in the case when a user is logged in and has role `"ROLE_SUPPORT"`, Then the `Available drivers` will display on single vehicle page
+- Voter : `src/Security/Voter/VehiculesVoter.php`
+- Controller verification to `$this->denyAccessUnlessGranted('show_drivers', $vehicules);` in `src/Controller/VehicleController.php`
+- In twig : `{% if is_granted('show_drivers', vehicule) %}`
+- Must send object of type *vehicles*, `$subject` in voters will be use
