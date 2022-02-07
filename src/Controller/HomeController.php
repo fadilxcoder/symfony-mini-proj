@@ -12,6 +12,7 @@ use App\Repository\VehiculesRepository;
 use \Redis;
 use String\Normalizer\StringNormalizer;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Component\Mailer\MailerInterface;
@@ -62,7 +63,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(ParameterBagInterface $parameterBag)
     {
         $form = $this->createForm(HomePageSearchType::class);
         $em = $this->entityManager; // $em = $this->getDoctrine()->getManager();
@@ -97,19 +98,22 @@ class HomeController extends AbstractController
             'partners' => $partners,
             'HomePageForm' => $form->createView(),
             'vehicules' => $vehicles,
-            'stringNrmlz' => $this->theNormalizer(),
+            'stringNrmlz' => $this->theNormalizer($parameterBag),
         ]);
     }
 
-    public function theNormalizer()
+    private function theNormalizer(ParameterBagInterface $parameterBag)
     {
         $str = 'Charles et Nadine se sont rencontrés par hasard sur les Champs-Élysées. Ils sont amis depuis longtemps.À Montréal, ils fréquentaient les mêmes endroits, ils allaient régulièrement prendre un verre ou dîner dans la rue Sainte-Sophie.';
 
         if ($this->redis->get('symfony:homepage:about')) {
             return $this->redis->get('symfony:homepage:about');
         }
+        $db = $parameterBag->get('database')['db1'];
+        $this->redis->select($db);
 
-        $this->redis->set('symfony:homepage:about', $this->stringNormalizer->convert($str), 60);
+        $ttl = $parameterBag->get('ttl')['homepage'];
+        $this->redis->set('symfony:homepage:about', $this->stringNormalizer->convert($str), $ttl);
 
         return $this->stringNormalizer->convert($str);
     }
