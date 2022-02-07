@@ -58,9 +58,10 @@ class PricingBlockRepository extends ServiceEntityRepository
                 ORDER BY p.position ASC';
 
         $statment = $connection->prepare($sql);
-        $statment->bindParam(':status', $status, \PDO::PARAM_BOOL);
-        $statment->execute();
+        $result = $statment->executeQuery([
+            'status' => $status
+        ]);
 
-        return $statment->fetchAll();
+        return $result->fetchAllAssociative();
     }
 }
