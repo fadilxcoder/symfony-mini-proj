@@ -1,8 +1,7 @@
 security:
 #    encoders:
     password_hashers:
-        App\Entity\User:
-            algorithm: auto
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
             
     # https://symfony.com/doc/current/security/experimental_authenticators.html
     enable_authenticator_manager: true
@@ -19,11 +18,9 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            guard:
-                authenticators:
-                    - App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
+            custom_authenticator: App\Security\AppLoginAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -36,7 +33,7 @@ security:
     access_control:
         - { path: ^/booking, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY } # whitelisted
+#        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY, port: 8080 } # whitelisted
 
     # Users with the ROLE_SUPPORT role will also have the ROLE_USER role. 
     # And users with ROLE_ADMIN, will automatically have ROLE_SUPPORT, ROLE_ALLOWED_TO_SWITCH and ROLE_USER (inherited from ROLE_SUPPORT).
