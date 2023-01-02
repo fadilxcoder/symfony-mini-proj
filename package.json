@@ -1,7 +1,7 @@
 {
     "devDependencies": {
         "@babel/compat-data": "^7.15.0",
-        "@symfony/webpack-encore": "^0.28.2",
+        "@symfony/webpack-encore": "^4.2.0",
         "core-js": "^3.18.1",
         "popper.js": "^1.16.1",
         "regenerator-runtime": "^0.13.9",
